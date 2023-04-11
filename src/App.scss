@@ -12,6 +12,10 @@ body {
 }
 
 html body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
   overflow-x: hidden;
 }
 
@@ -39,7 +43,7 @@ html body{
 
   .navbar-brand {
     font-size: 18px;
-    font-family: "Helvetica Neue", sans-serif;
+    font-family: "Helvetica Neue", monospace;
   }
 }
 
@@ -48,7 +52,7 @@ html body{
 }
 
 .display- {
-  font-size: calc(8rem + 1.5vw);
+  font-size: 120px;
   font-weight: 500;
   font-family: "Helvetica Neue", sans-serif;
 }
