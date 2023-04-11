@@ -1,26 +1,42 @@
 import {Link} from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-graceful-image';
+import {motion} from "framer-motion";
 
-function Splash() {
+const transition = {duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96]}
+
+function Splash({imageWidth}) {
     return (
         <div className='container'>
-            <div className='text-center m-md-6'>
+            <div className='container text-center m-md-6 g-0 rounded-3'
+                 style={{
+                     width: imageWidth,
+                     height: 'auto',
+                     overflow: 'hidden',
+                 }}>
                 <Link to={`/home`}>
                     <ProgressiveImage
-                        src={require('../images/splash_image.webp')}
-                        placeholder={require('../images/splash_image.webp')}>
-                        {(src) => <img className='img-fluid w-50 rounded' src={src} alt='Samuel Catania'/>}
+                        src={require('../images/larger-compressed-splash-image.jpg')}
+                        placeholder={require('../images/compressed-splash-image.jpg')}>
+                        {(src) => <motion.img className='img-fluid rounded-3'
+                                              whileHover={{scale: 1.1}}
+                                              transition={transition}
+                                              src={src}
+                                              alt='Samuel Catania'/>}
                     </ProgressiveImage>
                 </Link>
             </div>
-            <div className='container w-50'>
+            <div className='container' style={{width: imageWidth}}>
                 <div className='row mt-2'>
-                    <div className='col p-0 text-start'>
+                    <motion.div className='col p-0 text-start'
+                                exit={{opacity: 0}}
+                                transition={transition}>
                         Web Developer
-                    </div>
-                    <div className='col p-0 text-end'>
+                    </motion.div>
+                    <motion.div className='col p-0 text-end'
+                                exit={{opacity: 0}}
+                                transition={transition}>
                         Student
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>
