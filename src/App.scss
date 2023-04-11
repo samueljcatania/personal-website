@@ -1,8 +1,40 @@
-.container {
-  background-color: #f0d8bb;
+// Styling to hide the scrollbar for Chrome, Safari and Opera
+body::-webkit-scrollbar {
+  display: none;
 }
 
+// Styling to hide the scrollbar for Internet Explorer, Edge and Firefox
+body {
+  overflow-x: hidden;
+  -ms-overflow-style: none; // Internet Explorer and Edge
+  scrollbar-width: none; // Firefox
+
+}
+
+html body{
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #f0d8bb;
+
+  &.spacer {
+    margin-top: 25px;
+  }
+}
+
+.window-height {
+  height: calc(100vh - 160px);
+}
+
+.align-with-bottom {
+  height: calc(100vh - 800px);
+}
+
+
 .navbar {
+  position: fixed;
+  width: 100%;
   background-color: #f0d8bb;
 
   .navbar-brand {
@@ -11,17 +43,12 @@
   }
 }
 
-.m-md-6 {
+.mt-6 {
   margin-top: 10rem;
 }
 
 .display- {
-  font-size: calc(2rem + 5vw);
+  font-size: calc(8rem + 1.5vw);
+  font-weight: 500;
   font-family: "Helvetica Neue", sans-serif;
-}
-
-.thumb-post img {
-  //position: absolute;
-  //object-fit: none;
-  //object-position: center;
 }

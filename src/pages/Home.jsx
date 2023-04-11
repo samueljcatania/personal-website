@@ -1,32 +1,56 @@
+import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 // Pages
 import About from "../components/About";
 
-function Home() {
+// Hooks
+
+function Home({imageSize}) {
+    const [windowSize, setWindowSize] = useState([
+        window.innerWidth,
+        window.innerHeight,
+    ]);
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowSize([window.innerWidth, window.innerHeight]);
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    });
+
     return (
-        <motion.div className='m-md-6 container-fluid px-0'
-                    initial='initial'
-                    animate='animate'
-                    exit='exit'>
-            <div className='container'>
-                <motion.div className='row row-cols-2 m-4'
-                            initial={{opacity: 0}}>
-                    <div className='col p-0 text-start'>
-                        Web Developer
-                    </div>
-                    <motion.div className='col p-0 text-end'
-                                initial={{opacity: 0}}>
-                        Student
-                    </motion.div>
-                </motion.div>
+        <div className='container-fluid g-0 mt-6'>
+            <motion.div className='container-fluid px-0'
+                        initial='initial'
+                        animate='animate'
+                        exit='exit'>
+                <div className='container'>
+                    {/*    <motion.div className='row row-cols-2 text-center'*/}
+                    {/*                style={{width: 700}}*/}
+                    {/*                initial={{opacity: 1}}>*/}
+                    {/*        <div className='col p-0 text-start'>*/}
+                    {/*            Web Developer*/}
+                    {/*        </div>*/}
+                    {/*        <motion.div className='col p-0 text-end'*/}
+                    {/*                    initial={{opacity: 1}}>*/}
+                    {/*            Student*/}
+                    {/*        </motion.div>*/}
+                    {/*    </motion.div>*/}
+                </div>
                 <motion.div className='text-center'
-                            initial={{opacity: 0}}>
+                            initial={{opacity: 1}}>
                     <span className='display-'>S</span>
                     <span className='display-'>a</span>
                     <span className='display-'>m</span>
                     <span className='display-'>u</span>
                     <span className='display-'>e</span>
                     <span className='display-'>l</span>
+                    <span className='display-'> </span>
                     <span className='display-'>C</span>
                     <span className='display-'>a</span>
                     <span className='display-'>t</span>
@@ -35,16 +59,25 @@ function Home() {
                     <span className='display-'>i</span>
                     <span className='display-'>a</span>
                 </motion.div>
-            </div>
+            </motion.div>
             <div className='row g-0'>
-                <div className='container text-center'>
-                    <img className='img-fluid w-50 rounded-3'
+                <motion.div className='container text-center g-0'
+                            style={{
+                                height: windowSize[1],
+                                width: windowSize[0],
+                                overflow: 'hidden',
+                            }}>
+                    <img className='img-fluid'
                          src={require("../images/splash_image.webp")}
-                         alt='Samuel Catania'/>
-                </div>
+                         alt='Samuel Catania'
+                         style={{
+                             height: windowSize[0],
+                             width: 'auto'
+                         }}/>
+                </motion.div>
             </div>
             <About/>
-        </motion.div>
+        </div>
     )
 }
 

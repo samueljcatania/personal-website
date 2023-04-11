@@ -9,14 +9,14 @@ import {useState} from "react";
 
 function App() {
     const location = useLocation();
-    const [imageWidth] = useState(550);
+    const [imageSize] = useState({height: 350, width: 550});
 
     return (
         //initial={false}
         <AnimatePresence mode='wait'>
             <Routes location={location} key={location.pathname}>
-                <Route path='/' element={<Splash imageWidth={imageWidth}/>}/>
-                <Route path='/home' element={<Home/>}/>
+                <Route path='/' element={<Splash imageSize={imageSize}/>}/>
+                <Route path='/home' element={<Home imageSize={imageSize}/>}/>
             </Routes>
         </AnimatePresence>
     );
