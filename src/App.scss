@@ -1,0 +1,27 @@
+.container {
+  background-color: #f0d8bb;
+}
+
+.navbar {
+  background-color: #f0d8bb;
+
+  .navbar-brand {
+    font-size: 18px;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+}
+
+.m-md-6 {
+  margin-top: 10rem;
+}
+
+.display- {
+  font-size: calc(2rem + 5vw);
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.thumb-post img {
+  //position: absolute;
+  object-fit: none;
+  object-position: center;
+}

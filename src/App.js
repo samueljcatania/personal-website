@@ -1,17 +1,16 @@
-import './App.css';
+import {Route, Routes} from "react-router-dom";
+// Pages
+import Splash from "./pages/Splash"
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+// Styles
+import './App.scss';
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Navbar/>}/>
-                <Route path="/home" element={<Home/>}/>
-            </Routes>
-        </BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Splash/>}/>
+            <Route path='/home' element={<Home/>}/>
+        </Routes>
     );
 }
 

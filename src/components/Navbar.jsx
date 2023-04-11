@@ -1,7 +1,11 @@
 function Navbar() {
     return (
-        <div>
-            <h1>This is the navbar page.</h1>
+        <div className='container'>
+            <nav className='navbar navbar-light mt-lg-4'>
+                <div className='container-fluid'>
+                    <a className='navbar-brand' href='/'>Samuel Catania</a>
+                </div>
+            </nav>
         </div>
     )
 }
