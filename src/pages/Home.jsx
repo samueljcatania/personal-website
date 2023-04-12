@@ -3,7 +3,7 @@ import {motion, useScroll, useTransform} from "framer-motion";
 // Components
 import About from "../components/About";
 
-const transition = {duration: 1.4, ease: [0.6, 0.01, 0.05, 0.9]}
+const transition = {duration: 2, ease: [0.6, 0.01, 0.05, 0.9]}
 
 const firstName = {
     initial: {
@@ -87,10 +87,10 @@ function Home({imageSize}) {
     return (
         <div className=''>
             <div className='flex justify-center items-center h-screen'>
-                <div className='mt-56 grid grid-cols-1 flex justify-center'>
+                <div className='mt-56 grid grid-cols-1 justify-center'>
                     <center>
                         <motion.div onAnimationComplete={() => setCanScroll(true)}
-                                    className='grid flex items-center justify-center'
+                                    className='grid items-center justify-center'
                                     initial='initial'
                                     animate='animate'
                                     exit='exit'>
@@ -142,7 +142,7 @@ function Home({imageSize}) {
                                     initial={{
                                         width: imageSize.width,
                                         height: imageSize.height,
-                                        y: '-56%',
+                                        y: '-65%',
                                     }}
                                     animate={{
                                         y: 0,
@@ -158,6 +158,8 @@ function Home({imageSize}) {
                                             initial={{scale: 1.1}}
                                             animate={{
                                                 scale: 1.0,
+                                                height: windowSize[1] - 200,
+                                                width: windowSize[0],
                                                 transition: {delay: 0.2, ...transition}
                                             }}/>
                             </motion.div>
