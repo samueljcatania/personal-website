@@ -17,8 +17,9 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
+    "add-domain": "echo \"samueljcatania.com\" > build/CNAME",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run add-domain && npm run build && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
