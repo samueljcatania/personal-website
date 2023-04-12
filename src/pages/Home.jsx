@@ -1,16 +1,14 @@
 import {useEffect, useState} from "react";
-import {motion} from "framer-motion";
+import {motion, useScroll, useTransform} from "framer-motion";
 // Pages
 import About from "../components/About";
-import {Link} from "react-router-dom";
-import ProgressiveImage from "react-progressive-graceful-image";
 
 const transition = {duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]}
 
 const firstName = {
     initial: {
         y: 0,
-        opacity: 1
+        opacity: 0
     },
     animate: {
         y: 0,
@@ -21,7 +19,7 @@ const firstName = {
             staggerDirection: -1,
             transition: {delay: 1.2, ...transition},
             opacity: {
-                delay: 0.8,
+                delay: 0.7,
             },
         },
     },
@@ -30,7 +28,7 @@ const firstName = {
 const lastName = {
     initial: {
         y: 0,
-        opacity: 1
+        opacity: 0
     },
     animate: {
         y: 0,
@@ -40,7 +38,7 @@ const lastName = {
             staggerChildren: 0.04,
             staggerDirection: 1,
             opacity: {
-                delay: 0.8,
+                delay: 0.7,
             },
         },
     },
@@ -65,6 +63,19 @@ function Home({imageSize}) {
         window.innerHeight,
     ]);
 
+    const {scrollYProgress} = useScroll();
+    const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
+    const [canScroll, setCanScroll] = useState(false);
+
+    useEffect(() => {
+        if (canScroll === false) {
+            document.querySelector("body").classList.add('overflow-y-hidden');
+        } else {
+            document.querySelector("body").classList.remove('overflow-y-hidden');
+        }
+    }, [canScroll]);
+
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowSize([window.innerWidth, window.innerHeight]);
@@ -79,9 +90,10 @@ function Home({imageSize}) {
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div className='mt-60 grid grid-cols-1 flex justify-center'>
+            <div className='mt-96 grid grid-cols-1 flex justify-center'>
                 <center>
-                    <motion.div className='flex items-center justify-center'
+                    <motion.div onAnimationComplete={() => setCanScroll(true)}
+                                className='flex items-center justify-center'
                                 initial='initial'
                                 animate='animate'
                                 exit='exit'>
@@ -119,14 +131,14 @@ function Home({imageSize}) {
                             </motion.span>
                         </motion.div>
                     </motion.div>
-                    <motion.div className='flex rounded-lg w-screen overflow-hidden'
+                    <motion.div className='flex rounded-lg w-screen overflow-hidden mb-24'
                                 style={{
                                     height: windowSize[1] - 200
                                 }}
                                 initial={{
                                     width: imageSize.width,
                                     height: imageSize.height,
-                                    y: '-64%',
+                                    y: '-50%',
                                 }}
                                 animate={{
                                     y: 0,
@@ -137,11 +149,13 @@ function Home({imageSize}) {
                         <motion.img className='flex object-cover w-full items-center justify-center'
                                     src={require('../images/splash_image3.webp')}
                                     alt='Samuel Catania'
-                                    initial={{scale: 1.1}}
+                                    style={{scale: scale}}
+                                    initial={{scale: 1.0}}
                                     animate={{
                                         transition: {delay: 0, ...transition}
                                     }}/>
                     </motion.div>
+                    <About/>
                 </center>
             </div>
         </div>

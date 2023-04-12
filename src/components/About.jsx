@@ -1,13 +1,8 @@
 function About() {
     return (
-        <div>
+        <div className='container'>
             <p>
                 asssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkdasssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkd
-                asssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkd
-                asssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkdasssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkdasssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkdasssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkdv
-                asssssssssssssssssssssssdjasbdjkasbdkjasbkjdabsjkd
-
-
             </p>
         </div>
     )
