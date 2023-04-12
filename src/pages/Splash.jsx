@@ -15,10 +15,10 @@ const pictures: string[] = [
 ]
 
 function Splash({imageSize}) {
+    // eslint-disable-next-line no-unused-vars
     const {imagesPreloaded} = UseImagePreloader(pictures)
 
     return (
-
         <div className='flex justify-center items-center h-screen'>
             <div className="grid grid-cols-1 flex justify-center">
                 <div className='flex rounded-lg overflow-hidden'

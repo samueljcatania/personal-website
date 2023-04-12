@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
-// Pages
+// Components
 import About from "../components/About";
 
-const transition = {duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9]}
+const transition = {duration: 1.4, ease: [0.6, 0.01, 0.05, 0.9]}
 
 const firstName = {
     initial: {
@@ -17,7 +17,6 @@ const firstName = {
             delayChildren: 0.6,
             staggerChildren: 0.04,
             staggerDirection: -1,
-            transition: {delay: 1.2, ...transition},
             opacity: {
                 delay: 0.7,
             },
@@ -46,14 +45,11 @@ const lastName = {
 
 const letter = {
     initial: {
-        top: 400,
+        y: 400
     },
     animate: {
-        top: 0,
-        transition: {
-            duration: 1, ...transition
-        },
-
+        y: 0,
+        transition: {duration: 1, ...transition},
     },
 };
 
@@ -89,39 +85,46 @@ function Home({imageSize}) {
     });
 
     return (
-        <div>
+        <div className=''>
             <div className='flex justify-center items-center h-screen'>
                 <div className='mt-56 grid grid-cols-1 flex justify-center'>
                     <center>
                         <motion.div onAnimationComplete={() => setCanScroll(true)}
-                                    className='flex items-center justify-center'
+                                    className='grid flex items-center justify-center'
                                     initial='initial'
                                     animate='animate'
                                     exit='exit'>
-                            <div className='flex items-center justify-center'>
-                                {/*    <motion.div className='row row-cols-2 text-center'*/}
-                                {/*                style={{width: 700}}*/}
-                                {/*                initial={{opacity: 1}}>*/}
-                                {/*        <div className='col p-0 text-start'>*/}
-                                {/*            Web Developer*/}
-                                {/*        </div>*/}
-                                {/*        <motion.div className='col p-0 text-end'*/}
-                                {/*                    initial={{opacity: 1}}>*/}
-                                {/*            Student*/}
-                                {/*        </motion.div>*/}
-                                {/*    </motion.div>*/}
-                            </div>
-                            <motion.div style={{opacity: scale}}>
-                                <motion.span variants={firstName}>
+                            <motion.div className='container h-10'
+                                        initial={{
+                                            opacity: 0,
+                                            y: 20
+                                        }}
+                                        animate={{
+                                            opacity: 1,
+                                            y: 0,
+                                            transition: {delay: 1.2, ...transition},
+                                        }}>
+                                <motion.div className='grid grid-cols-2 h-10'>
+                                    <motion.span className=' text-start'>
+                                        Western University
+                                    </motion.span>
+                                    <motion.span className=' text-end'>
+                                        London, Canada
+                                    </motion.span>
+                                </motion.div>
+                            </motion.div>
+                            <motion.div className='grid grid-cols-2 mb-6' style={{opacity: scale}}>
+                                <motion.span className='flex' variants={firstName}>
                                     <motion.span className='text-9xl' variants={letter}>S</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>a</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>m</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>u</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>e</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>l</motion.span>
+                                    <motion.span className='text-9xl' variants={letter}>&nbsp;</motion.span>
                                 </motion.span>
-                                <motion.span className='text-9xl'>&nbsp;&nbsp;</motion.span>
-                                <motion.span variants={lastName}>
+                                <motion.span className='flex' variants={lastName}>
+                                    <motion.span className='text-9xl' variants={letter}>&nbsp;</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>C</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>a</motion.span>
                                     <motion.span className='text-9xl' variants={letter}>t</motion.span>
@@ -145,16 +148,19 @@ function Home({imageSize}) {
                                         y: 0,
                                         height: windowSize[1] - 200,
                                         width: windowSize[0],
-                                        transition: {delay: 0.4, ...transition}
+                                        transition: {delay: 0.2, ...transition}
                                     }}>
-                            <motion.img className='flex object-cover w-full items-center justify-center'
-                                        src={require('../images/splash_image3.webp')}
-                                        alt='Samuel Catania'
-                                        style={{scale: scale}}
-                                        initial={{scale: 1.1}}
-                                        animate={{
-                                            transition: {delay: 0, ...transition}
-                                        }}/>
+                            <motion.div whileHover='hover' transition={transition}>
+                                <motion.img className='flex object-cover w-full items-center justify-center'
+                                            src={require('../images/splash_image3.webp')}
+                                            alt='Samuel Catania'
+                                            style={{scale: scale}}
+                                            initial={{scale: 1.1}}
+                                            animate={{
+                                                scale: 1.0,
+                                                transition: {delay: 0.2, ...transition}
+                                            }}/>
+                            </motion.div>
                         </motion.div>
                     </center>
                 </div>

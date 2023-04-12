@@ -4,7 +4,7 @@ import {AnimatePresence} from "framer-motion";
 import Splash from "./pages/Splash"
 import Home from "./pages/Home";
 // Styles
-import './App.scss';
+import './App.css';
 import {useState} from "react";
 
 function App() {
