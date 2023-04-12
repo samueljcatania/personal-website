@@ -8,8 +8,6 @@ import App from './App';
 import Navbar from "./components/Navbar";
 // Styles
 import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

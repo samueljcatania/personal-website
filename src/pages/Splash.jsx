@@ -18,40 +18,37 @@ function Splash({imageSize}) {
     const {imagesPreloaded} = UseImagePreloader(pictures)
 
     return (
-        <div className='container'>
-            <div className='container window-height d-flex align-items-center'>
-                <div className='container'>
-                    <div className='container rounded-3 g-0'
-                         style={{
-                             width: imageSize.width,
-                             height: imageSize.height,
-                             overflow: 'hidden',
-                         }}>
-                        <Link to={`/home`}>
-                            <ProgressiveImage
-                                src={require('../images/larger-compressed-splash-image.jpg')}
-                                placeholder={require('../images/compressed-splash-image.jpg')}>
-                                {(src) => <motion.img className='img-fluid rounded-3'
-                                                      whileHover={{scale: 1.1}}
-                                                      transition={transition}
-                                                      src={Image3}
-                                                      alt='Samuel Catania'/>}
-                            </ProgressiveImage>
-                        </Link>
-                    </div>
-                    <div className='container' style={{width: imageSize.width}}>
-                        <div className='row'>
-                            <motion.div className='col p-0 text-start'
-                                        exit={{opacity: 0}}
-                                        transition={transition}>
-                                Western University
-                            </motion.div>
-                            <motion.div className='col p-0 text-end'
-                                        exit={{opacity: 0}}
-                                        transition={transition}>
-                                London, Canada
-                            </motion.div>
-                        </div>
+        <div className='flex justify-center items-center h-screen'>
+            <div className="grid grid-cols-1 flex justify-center">
+                <div className='flex rounded-lg'
+                     style={{
+                         width: imageSize.width,
+                         height: imageSize.height,
+                         overflow: 'hidden',
+                     }}>
+                    <Link to={`/home`}>
+                        <ProgressiveImage
+                            src={require('../images/larger-compressed-splash-image.jpg')}
+                            placeholder={require('../images/compressed-splash-image.jpg')}>
+                            {(src) => <motion.img whileHover={{scale: 1.1}}
+                                                  transition={transition}
+                                                  src={src}
+                                                  alt='Samuel Catania'/>}
+                        </ProgressiveImage>
+                    </Link>
+                </div>
+                <div className='flex h-10'>
+                    <div className='grid grid-cols-2 h-10' style={{width: imageSize.width}}>
+                        <motion.div className='container text-start'
+                                    exit={{opacity: 0}}
+                                    transition={transition}>
+                            Western University
+                        </motion.div>
+                        <motion.div className='container text-end'
+                                    exit={{opacity: 0}}
+                                    transition={transition}>
+                            London, Canada
+                        </motion.div>
                     </div>
                 </div>
             </div>

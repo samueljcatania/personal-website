@@ -1,13 +1,13 @@
 function Navbar() {
     return (
-        <div className='container g-0'>
-            <nav className='navbar navbar-expand navbar-light mt-4'>
-                <div className='container-fluid g-0'>
-                    <a className='navbar-brand' href='/'>Samuel Catania</a>
-                    <a className='navbar-brand' href='/home'>Home</a>
+            <nav className="flex fixed w-screen py-10">
+                <div className="flex-1 flex justify-center mr-auto">
+                    <a href="/" className="mx-2">Samuel Catania</a>
+                </div>
+                <div className="flex-1 flex justify-center ml-auto">
+                    <a href="/home" className="mx-2">Home</a>
                 </div>
             </nav>
-        </div>
     )
 }
 
