@@ -12,7 +12,8 @@ function App() {
     const [imageSize] = useState({height: 350, width: 550});
 
     return (
-        <AnimatePresence initial={false} mode='wait'>
+        //initial={false}
+        <AnimatePresence  mode='wait'>
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<Splash imageSize={imageSize}/>}/>
                 <Route path='/home' element={<Home imageSize={imageSize}/>}/>

@@ -20,11 +20,10 @@ function Splash({imageSize}) {
     return (
         <div className='flex justify-center items-center h-screen'>
             <div className="grid grid-cols-1 flex justify-center">
-                <div className='flex rounded-lg'
+                <div className='flex rounded-lg overflow-hidden'
                      style={{
                          width: imageSize.width,
-                         height: imageSize.height,
-                         overflow: 'hidden',
+                         height: imageSize.height
                      }}>
                     <Link to={`/home`}>
                         <ProgressiveImage

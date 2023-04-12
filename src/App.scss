@@ -12,43 +12,7 @@ body {
 }
 
 html body{
-  position: relative;
-  height: 100%;
-  width: 100%;
-  top: 0;
   overflow-x: hidden;
-}
-
-.container {
-  background-color: #f0d8bb;
-
-  &.spacer {
-    margin-top: 25px;
-  }
-}
-
-.window-height {
-  height: calc(100vh - 160px);
-}
-
-.align-with-bottom {
-  height: calc(100vh - 800px);
-}
-
-
-.navbar {
-  position: fixed;
-  width: 100%;
-  background-color: #f0d8bb;
-
-  .navbar-brand {
-    font-size: 18px;
-    font-family: "Helvetica Neue", monospace;
-  }
-}
-
-.mt-6 {
-  margin-top: 10rem;
 }
 
 .display- {
