@@ -6,6 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 import App from './App';
 // Components
 import Navbar from "./components/Navbar";
+import ScrollToTop from './components/ScrollToTop';
 // Styles
 import './index.css';
 
@@ -14,8 +15,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Navbar/>
-            <App/>
+            <ScrollToTop>
+                <Navbar/>
+                <App/>
+            </ScrollToTop>
         </BrowserRouter>
     </React.StrictMode>
 );

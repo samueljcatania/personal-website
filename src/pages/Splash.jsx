@@ -18,6 +18,7 @@ function Splash({imageSize}) {
     const {imagesPreloaded} = UseImagePreloader(pictures)
 
     return (
+
         <div className='flex justify-center items-center h-screen'>
             <div className="grid grid-cols-1 flex justify-center">
                 <div className='flex rounded-lg overflow-hidden'
