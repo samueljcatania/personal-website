@@ -151,7 +151,7 @@ function Home({imageSize}) {
                                         src={require('../images/splash_image3.webp')}
                                         alt='Samuel Catania'
                                         style={{scale: scale}}
-                                        initial={{scale: 1.0}}
+                                        initial={{scale: 1.1}}
                                         animate={{
                                             transition: {delay: 0, ...transition}
                                         }}/>

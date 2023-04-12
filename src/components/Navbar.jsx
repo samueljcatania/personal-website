@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <nav className="flex fixed w-screen py-10">
+        <nav className="bg-theme flex fixed w-screen py-10">
             <div className="flex-1 flex justify-center mr-auto">
                 <a href="/" className="mx-2">Samuel Catania</a>
             </div>
