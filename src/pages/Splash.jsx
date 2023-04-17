@@ -2,25 +2,24 @@ import {Link} from 'react-router-dom';
 import ProgressiveImage from 'react-progressive-graceful-image';
 import {motion} from "framer-motion";
 // Hooks
-import UseImagePreloader from "../hooks/UseImagePreloader";
+import UseImagePreloader from "../hooks/useImagePreloader";
 // Images
-import Image3 from "../images/splash_image3.webp";
-import Image4 from "../images/larger-compressed-splash-image.jpg";
-import Image5 from "../images/compressed-splash-image.jpg";
-
-const transition = {duration: 0.6, ease: [0.43, 0.13, 0.23, 0.96]}
+import img1 from "../assets/splash_image3.webp";
+import img2 from "../assets/larger-compressed-splash-image.jpg";
+import img3 from "../assets/compressed-splash-image.jpg";
+// Data
+import {splashTransition} from "../data/transitionData";
 
 const pictures: string[] = [
-    Image3, Image4, Image5
+    img1, img2, img3
 ]
 
 function Splash({imageSize}) {
-    // eslint-disable-next-line no-unused-vars
-    const {imagesPreloaded} = UseImagePreloader(pictures)
+    UseImagePreloader(pictures)
 
     return (
         <div className='flex justify-center items-center h-screen'>
-            <div className="grid grid-cols-1 flex justify-center">
+            <div className="grid grid-cols-1 justify-center">
                 <div className='flex rounded-lg overflow-hidden'
                      style={{
                          width: imageSize.width,
@@ -28,10 +27,10 @@ function Splash({imageSize}) {
                      }}>
                     <Link to={`/home`}>
                         <ProgressiveImage
-                            src={require('../images/larger-compressed-splash-image.jpg')}
-                            placeholder={require('../images/compressed-splash-image.jpg')}>
+                            src={require('../assets/larger-compressed-splash-image.jpg')}
+                            placeholder={require('../assets/compressed-splash-image.jpg')}>
                             {(src) => <motion.img whileHover={{scale: 1.1}}
-                                                  transition={transition}
+                                                  transition={splashTransition}
                                                   src={src}
                                                   alt='Samuel Catania'/>}
                         </ProgressiveImage>
@@ -39,15 +38,15 @@ function Splash({imageSize}) {
                 </div>
                 <div className='flex h-10'>
                     <div className='grid grid-cols-2 h-10' style={{width: imageSize.width}}>
-                        <motion.div className='container text-start'
+                        <motion.div className='container text-start font-nunito'
                                     exit={{opacity: 0}}
-                                    transition={transition}>
+                                    transition={splashTransition}>
                             Western University
                         </motion.div>
-                        <motion.div className='container text-end'
+                        <motion.div className='container text-end font-nunito'
                                     exit={{opacity: 0}}
-                                    transition={transition}>
-                            London, Canada
+                                    transition={splashTransition}>
+                            London, Ontario
                         </motion.div>
                     </div>
                 </div>

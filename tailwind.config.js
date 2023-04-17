@@ -8,13 +8,13 @@ module.exports = {
             transparent: 'transparent',
             current: 'currentColor',
             'theme': '#f0d8bb',
+            'navbar': '#ffffff'
         },
         fontFamily: {
             'sans': ['ui-sans-serif', 'system-ui'],
-            'serif': ['ui-serif', 'Georgia'],
-            'mono': ['ui-monospace', 'SFMono-Regular'],
-            'display': ['Oswald'],
-            'body': ['"Open Sans"']
+            'body': ['Open Sans'],
+            'hahmlet': ['Hahmlet'],
+            'nunito': ['Nunito']
         },
         extend: {},
     },

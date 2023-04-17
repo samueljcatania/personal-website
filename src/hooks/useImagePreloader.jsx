@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
 
 function preloadImage(src: string) {
     return new Promise((resolve, reject) => {
@@ -13,15 +13,11 @@ function preloadImage(src: string) {
     })
 }
 
-export default function UseImagePreloader(imageList: string[]) {
-    const [imagesPreloaded, setImagesPreloaded] = useState(false)
-
+function useImagePreloader(imageList: string[]) {
     useEffect(() => {
         let isCancelled = false
 
         async function effect() {
-            console.log('PRELOAD')
-
             if (isCancelled) {
                 return
             }
@@ -32,12 +28,6 @@ export default function UseImagePreloader(imageList: string[]) {
             }
 
             await Promise.all(imagesPromiseList)
-
-            if (isCancelled) {
-                return
-            }
-
-            setImagesPreloaded(true)
         }
 
         effect().then()
@@ -46,6 +36,6 @@ export default function UseImagePreloader(imageList: string[]) {
             isCancelled = true
         }
     }, [imageList])
-
-    return {imagesPreloaded}
 }
+
+export default useImagePreloader;
