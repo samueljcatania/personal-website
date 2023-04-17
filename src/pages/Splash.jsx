@@ -14,7 +14,7 @@ const pictures: string[] = [
     img1, img2, img3
 ]
 
-function Splash({imageSize}) {
+function Splash() {
     UseImagePreloader(pictures)
 
     return (

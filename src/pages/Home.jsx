@@ -10,19 +10,7 @@ import Navbar from "../components/Navbar";
 import {firstName, lastName, letter} from "../data/variantData"
 import {homeTransition} from "../data/transitionData"
 
-export const setPageLoaded = () => {
-    const storage = window.sessionStorage;
-    storage.setItem('hasPageLoaded', true);
-};
-
-
-const getPageLoaded = () => {
-    const storage = window.sessionStorage;
-    return JSON.parse(storage.getItem('hasPageLoaded') || false);
-};
-
-
-function Home({imageSize}) {
+function Home() {
     const titleFirstName = ['S', 'a', 'm', 'u', 'e', 'l']
     const titleLastName = ['C', 'a', 't', 'a', 'n', 'i', 'a']
     const [canScroll, setCanScroll] = useState(false);
@@ -62,8 +50,8 @@ function Home({imageSize}) {
 
     return (
         !isReloading && <div>
-            <div className='flex justify-center items-center h-screen mb-20'>
-                <div className='mt-20 grid grid-cols-1 place-items-center'>
+            <div className='flex justify-center place-items-center items-center h-screen mb-10'>
+                <div className='mt-24 md:mt-20 grid grid-cols-1 justify-center place-items-center w-screen'>
                     <motion.div className='grid items-center justify-center'
                                 onAnimationComplete={() => {
                                     setCanScroll(true);
@@ -72,6 +60,7 @@ function Home({imageSize}) {
                                 animate='animate'
                                 exit='exit'>
                         <motion.div className='container h-10'
+                                    key='homeTitleHeadings'
                                     initial={{
                                         opacity: 0,
                                         y: 20
@@ -81,7 +70,7 @@ function Home({imageSize}) {
                                         y: 0,
                                         transition: {delay: 1.2, ...homeTransition},
                                     }}>
-                            <motion.div className='grid grid-cols-2 h-10'>
+                            <motion.div className='grid grid-cols-2 h-10 text-xs sm:text-base'>
                                 <motion.span className='text-start font-nunito'>
                                     Western University
                                 </motion.span>
@@ -90,11 +79,11 @@ function Home({imageSize}) {
                                 </motion.span>
                             </motion.div>
                         </motion.div>
-                        <motion.div className='grid grid-cols-2 mb-8 gap-10' style={{opacity: scale}}>
+                        <motion.div className='grid grid-cols-2 mb-12 md:mb-8 gap-4 md:gap-10' style={{opacity: scale}}>
                             <motion.span className='flex' variants={firstName}>
                                 {titleFirstName.map((titleLetter, id) => (
                                     <motion.span key={id}
-                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
+                                                 className='text-5xl tex sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
                                                  variants={letter}>{titleLetter}</motion.span>
                                 ))}
                             </motion.span>
@@ -109,32 +98,38 @@ function Home({imageSize}) {
                     </motion.div>
                     <motion.div
                         className='flex justify-center overflow-hidden w-3/4 md:w-[500px] md:h-[318px]'
-                        id='imageContainer'
+                        key='homeImageContainer'
+                        id='homeImageContainer'
                         onAnimationStart={() => {
-                            const element = document.getElementById('imageContainer')
+                            const element = document.getElementById('homeImageContainer')
                             element.classList.add('rounded-lg')
                         }}
                         onAnimationComplete={() => {
-                            const element = document.getElementById('imageContainer')
+                            const element = document.getElementById('homeImageContainer')
                             element.classList.remove('rounded-lg')
                         }}
                         initial={{
-                            y: '-50%',
-                            marginBottom: 3,
+                            y: windowSize[0] < 768 ? '-69%' : '-50%',
+                            marginBottom: windowSize[0] < 768 ? 2 : 3,
                         }}
                         animate={{
                             y: 0,
-                            height: windowSize[1] - 200,
                             width: windowSize[0],
+                            height: windowSize[1] - 200,
                             transition: {delay: 0.35, ...homeTransition}
-                        }}>
-                        <motion.div transition={homeTransition}>
+                        }}
+                    >
+                        <motion.div className='flex justify-center' transition={homeTransition}>
                             <motion.img
-                                className='flex object-cover items-center justify-center object-top w-3/4 md:w-[500px]'
+                                className='flex object-cover items-center justify-center object-top md:w-[500px]'
+                                key='homeImage'
                                 src={require('../assets/splash_image3.webp')}
                                 alt='Samuel Catania'
                                 // style={{scale: scale}}
-                                initial={{scale: 1.1, height: '100%'}}
+                                initial={{
+                                    scale: windowSize[0] < 768 ? 1 : 1.1,
+                                    height: '100%',
+                                }}
                                 animate={{
                                     scale: 1.0,
                                     width: windowSize[0],
@@ -151,8 +146,8 @@ function Home({imageSize}) {
                     <Navbar/>
                     <About/>
                     <Skills/>
-                    <Projects/>
-                    <Contact/>
+                    {/*<Projects/>*/}
+                    {/*<Contact/>*/}
                 </div>
             }
         </div>

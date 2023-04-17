@@ -86,8 +86,7 @@ function Navbar() {
     }, []);
 
     return (
-        <nav
-            className='flex items-center justify-between flex-wrap p-6 bg-white shadow-lg'>
+        <nav className='flex items-center justify-between flex-wrap p-6 bg-white shadow-lg sticky'>
             <div className="flex items-center flex-shrink-0 text-black mr-6">
                 <span className="font-semibold text-xl font-hahmlet tracking-tight">Samuel Catania</span>
             </div>
