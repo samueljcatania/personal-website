@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 // Components
 import About from "../components/About";
@@ -25,14 +25,20 @@ const getPageLoaded = () => {
 function Home({imageSize}) {
     const titleFirstName = ['S', 'a', 'm', 'u', 'e', 'l']
     const titleLastName = ['C', 'a', 't', 'a', 'n', 'i', 'a']
-    const componentRef = useRef()
     const [canScroll, setCanScroll] = useState(false);
+    const [isReloading, setIsReloading] = useState(false);
     const {scrollYProgress} = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
     const [windowSize, setWindowSize] = useState([
         window.innerWidth,
         window.innerHeight,
     ]);
+
+    useEffect(() => {
+        window.onbeforeunload = function () {
+            setIsReloading(true)
+        };
+    }, []);
 
     useEffect(() => {
         if (canScroll === false) {
@@ -55,15 +61,12 @@ function Home({imageSize}) {
     });
 
     return (
-        <div>
+        !isReloading && <div>
             <div className='flex justify-center items-center h-screen mb-20'>
-                <div className='mt-20 grid grid-cols-1 justify-center'>
-                    {console.log(getPageLoaded())}
+                <div className='mt-20 grid grid-cols-1 place-items-center'>
                     <motion.div className='grid items-center justify-center'
-                                onAnimationStart={() => getPageLoaded() ? setCanScroll(true) : null}
                                 onAnimationComplete={() => {
                                     setCanScroll(true);
-                                    setPageLoaded()
                                 }}
                                 initial='initial'
                                 animate='animate'
@@ -87,60 +90,71 @@ function Home({imageSize}) {
                                 </motion.span>
                             </motion.div>
                         </motion.div>
-                        <motion.div className='grid grid-cols-2 mb-8 gap-10' style={{opacity: scale}}
-                                    ref={componentRef}>
+                        <motion.div className='grid grid-cols-2 mb-8 gap-10' style={{opacity: scale}}>
                             <motion.span className='flex' variants={firstName}>
                                 {titleFirstName.map((titleLetter, id) => (
                                     <motion.span key={id}
-                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-9xl font-hahmlet'
+                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
                                                  variants={letter}>{titleLetter}</motion.span>
                                 ))}
                             </motion.span>
                             <motion.span className='flex' variants={lastName}>
                                 {titleLastName.map((titleLetter, id) => (
                                     <motion.span key={id}
-                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-9xl font-hahmlet'
+                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
                                                  variants={letter}>{titleLetter}</motion.span>
                                 ))}
                             </motion.span>
                         </motion.div>
                     </motion.div>
-                    <motion.div className='flex rounded-lg w-screen overflow-hidden'
-                                style={{
-                                    height: windowSize[1] - 200
-                                }}
-                                initial={{
-                                    width: imageSize.width,
-                                    height: imageSize.height,
-                                    y: '-46%',
-                                }}
+                    <motion.div
+                        className='flex justify-center overflow-hidden w-3/4 md:w-[500px] md:h-[318px]'
+                        id='imageContainer'
+                        onAnimationStart={() => {
+                            const element = document.getElementById('imageContainer')
+                            element.classList.add('rounded-lg')
+                        }}
+                        onAnimationComplete={() => {
+                            const element = document.getElementById('imageContainer')
+                            element.classList.remove('rounded-lg')
+                        }}
+                        initial={{
+                            y: '-50%',
+                            marginBottom: 3,
+                        }}
+                        animate={{
+                            y: 0,
+                            height: windowSize[1] - 200,
+                            width: windowSize[0],
+                            transition: {delay: 0.35, ...homeTransition}
+                        }}>
+                        <motion.div transition={homeTransition}>
+                            <motion.img
+                                className='flex object-cover items-center justify-center object-top w-3/4 md:w-[500px]'
+                                src={require('../assets/splash_image3.webp')}
+                                alt='Samuel Catania'
+                                // style={{scale: scale}}
+                                initial={{scale: 1.1, height: '100%'}}
                                 animate={{
-                                    y: 0,
-                                    height: windowSize[1] - 200,
+                                    scale: 1.0,
                                     width: windowSize[0],
-                                    transition: {delay: 0.2, ...homeTransition}
-                                }}>
-                        <motion.div whileHover='hover' transition={homeTransition}>
-                            <motion.img className='flex object-cover w-full items-center justify-center'
-                                        src={require('../assets/splash_image3.webp')}
-                                        alt='Samuel Catania'
-                                        style={{scale: scale}}
-                                        initial={{scale: 1.1}}
-                                        animate={{
-                                            scale: 1.0,
-                                            height: windowSize[1] - 200,
-                                            width: windowSize[0],
-                                            transition: {delay: 0.2, ...homeTransition}
-                                        }}/>
+                                    height: windowSize[1] - 200,
+                                    transition: {delay: 0.35, ...homeTransition}
+                                }}
+                            />
                         </motion.div>
                     </motion.div>
                 </div>
             </div>
-            <Navbar/>
-            <About/>
-            <Skills/>
-            <Projects/>
-            <Contact/>
+            {canScroll &&
+                <div>
+                    <Navbar/>
+                    <About/>
+                    <Skills/>
+                    <Projects/>
+                    <Contact/>
+                </div>
+            }
         </div>
     )
 }

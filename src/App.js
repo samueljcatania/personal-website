@@ -6,13 +6,15 @@ import Home from "./pages/Home";
 // Styles
 import './App.css';
 import {useState} from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     const location = useLocation();
     const [imageSize] = useState({height: 350, width: 550});
 
     return (
-        <AnimatePresence initial={false} mode='wait'>
+        <AnimatePresence mode='wait'>
+            <ScrollToTop/>
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<Splash imageSize={imageSize}/>}/>
                 <Route path='/home' element={<Home imageSize={imageSize}/>}/>

@@ -8,7 +8,7 @@ export const firstName = {
     animate: {
         opacity: 1,
         transition: {
-            delayChildren: 0.7,
+            delayChildren: 0.65,
             staggerChildren: 0.08,
             staggerDirection: -1,
             opacity: {
@@ -25,7 +25,7 @@ export const lastName = {
     animate: {
         opacity: 1,
         transition: {
-            delayChildren: 0.7,
+            delayChildren: 0.65,
             staggerChildren: 0.08,
             staggerDirection: 1,
             opacity: {
