@@ -14,7 +14,11 @@ function SingleSkill({skillName, id}) {
     return (
         <motion.div ref={ref}
                     style={{
-                        transform: isInView ? 'none' : (id % 2 === 0 ? 'translateX(-300px)' : 'translateX(300px)'),
+                        transform:
+                            isInView ? 'none'
+                                : (id % 2 === 0 ?
+                                    (windowSize[0] < 1280 ? 'translateX(-15%)' : 'translateX(-300px)')
+                                    : (windowSize[0] < 1280 ? 'translateX(15%)' : 'translateX(300px)')),
                         opacity: isInView ? 1 : 0,
                         transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1)'
                     }}>

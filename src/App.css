@@ -14,8 +14,13 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    ::-webkit-scrollbar {
-        -webkit-appearance: none;
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 }
 
