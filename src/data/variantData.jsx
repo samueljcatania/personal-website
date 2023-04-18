@@ -44,3 +44,13 @@ export const letter = {
         transition: {duration: 1, ...homeTransition},
     },
 };
+
+export const skill = {
+    initial: {
+        x: 300
+    },
+    animate: {
+        y: 0,
+        transition: {duration: 1, ...homeTransition},
+    },
+};

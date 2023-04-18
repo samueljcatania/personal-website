@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
 // Components
 import About from "../components/About";
@@ -9,18 +9,18 @@ import Navbar from "../components/Navbar";
 // Data
 import {firstName, lastName, letter} from "../data/variantData"
 import {homeTransition} from "../data/transitionData"
+import useWindowSize from "../hooks/useWindowSize";
+
 
 function Home() {
+    const refs = {about: useRef(null), skills: useRef(null), projects: useRef(null), contact: useRef(null)}
     const titleFirstName = ['S', 'a', 'm', 'u', 'e', 'l']
     const titleLastName = ['C', 'a', 't', 'a', 'n', 'i', 'a']
     const [canScroll, setCanScroll] = useState(false);
     const [isReloading, setIsReloading] = useState(false);
     const {scrollYProgress} = useScroll();
     const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
-    const [windowSize, setWindowSize] = useState([
-        window.innerWidth,
-        window.innerHeight,
-    ]);
+    const windowSize = useWindowSize()
 
     useEffect(() => {
         window.onbeforeunload = function () {
@@ -35,18 +35,6 @@ function Home() {
             document.querySelector("body").classList.remove('overflow-y-hidden');
         }
     }, [canScroll]);
-
-    useEffect(() => {
-        const handleWindowResize = () => {
-            setWindowSize([window.innerWidth, window.innerHeight]);
-        };
-
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-            window.removeEventListener('resize', handleWindowResize);
-        };
-    });
 
     return (
         !isReloading && <div>
@@ -143,11 +131,19 @@ function Home() {
             </div>
             {canScroll &&
                 <div>
-                    <Navbar/>
-                    <About/>
-                    <Skills/>
-                    {/*<Projects/>*/}
-                    {/*<Contact/>*/}
+                    <Navbar refs={refs}/>
+                    <div ref={refs.about}>
+                        <About/>
+                    </div>
+                    <div ref={refs.skills}>
+                        <Skills/>
+                    </div>
+                    <div ref={refs.projects}>
+                        <Projects/>
+                    </div>
+                    <div ref={refs.contact}>
+                        <Contact/>
+                    </div>
                 </div>
             }
         </div>
