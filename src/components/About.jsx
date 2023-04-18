@@ -6,7 +6,7 @@ function About() {
                     About
                 </h3>
                 <p className='font-nunito text-justify'>
-                    I’m a third-year student pursuing an Honours Specialization in Computer Science at Western
+                    I’m a third-year bachelor's student pursuing an Honours Specialization in Computer Science at Western
                     University, with a passion for exploring the latest trends and topics in all things machine
                     learning, full-stack web development, and software engineering. I love the creative freedom and
                     flexibility that comes with building websites and web applications, and I'm constantly exploring new
