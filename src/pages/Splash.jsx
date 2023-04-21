@@ -4,9 +4,9 @@ import {motion} from "framer-motion";
 // Hooks
 import UseImagePreloader from "../hooks/useImagePreloader";
 // Images
-import img1 from "../assets/splash_image3.webp";
-import img2 from "../assets/larger-compressed-splash-image.jpg";
-import img3 from "../assets/compressed-splash-image.jpg";
+import img1 from "../assets/splash/splash_image3.webp";
+import img2 from "../assets/splash/larger-compressed-splash-image.jpg";
+import img3 from "../assets/splash/compressed-splash-image.jpg";
 // Data
 import {splashTransition} from "../data/transitionData";
 
@@ -23,8 +23,8 @@ function Splash() {
                 <div className='flex rounded-lg overflow-hidden w-3/4 md:w-[500px]'>
                     <Link to={`/home`}>
                         <ProgressiveImage
-                            src={require('../assets/larger-compressed-splash-image.jpg')}
-                            placeholder={require('../assets/compressed-splash-image.jpg')}>
+                            src={require('../assets/splash/larger-compressed-splash-image.jpg')}
+                            placeholder={require('../assets/splash/compressed-splash-image.jpg')}>
                             {(src) => <motion.img className='w-full'
                                                   whileHover={{scale: 1.1}}
                                                   transition={splashTransition}
