@@ -38,95 +38,95 @@ function Home() {
 
     return (
         !isReloading && <div>
-            <div className='flex justify-center place-items-center items-center h-screen mb-10'>
-                <div className='mt-24 md:mt-20 grid grid-cols-1 justify-center place-items-center w-screen'>
-                    <motion.div className='grid items-center justify-center'
-                                onAnimationComplete={() => {
-                                    setCanScroll(true);
+            <div className='grid grid-cols-1 w-screen h-screen justify-items-center overflow-hidden'>
+                <motion.div className='grid justify-items-center h-[100px] md:h-[200px] mt-10'
+                            onAnimationComplete={() => {
+                                setCanScroll(true);
+                            }}
+                            initial='initial'
+                            animate='animate'
+                            exit='exit'>
+                    <motion.div className='container h-auto'
+                                key='homeTitleHeadings'
+                                initial={{
+                                    opacity: 0,
+                                    y: 20
                                 }}
-                                initial='initial'
-                                animate='animate'
-                                exit='exit'>
-                        <motion.div className='container h-10'
-                                    key='homeTitleHeadings'
-                                    initial={{
-                                        opacity: 0,
-                                        y: 20
-                                    }}
-                                    animate={{
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {delay: 1.2, ...homeTransition},
-                                    }}>
-                            <motion.div className='grid grid-cols-2 h-10 text-xs sm:text-base font-nunito'>
-                                <motion.span className='text-start'>
-                                    Western University
-                                </motion.span>
-                                <motion.span className='text-end'>
-                                    London, Ontario
-                                </motion.span>
-                            </motion.div>
-                        </motion.div>
-                        <motion.div
-                            className='grid grid-cols-2 mb-12 md:mb-8 gap-4 md:gap-10 text-5xl tex sm:text-6xl
-                            md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
-                            style={{opacity: scale}}>
-                            <motion.span className='flex' variants={firstName}>
-                                {titleFirstName.map((titleLetter, id) => (
-                                    <motion.span key={id}
-                                                 variants={letter}>{titleLetter}</motion.span>
-                                ))}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {delay: 1.2, ...homeTransition},
+                                }}>
+                        <motion.div className='grid grid-cols-2 h-auto text-xs sm:text-base font-nunito'>
+                            <motion.span className='text-start'>
+                                Western University
                             </motion.span>
-                            <motion.span className='flex' variants={lastName}>
-                                {titleLastName.map((titleLetter, id) => (
-                                    <motion.span key={id}
-                                                 variants={letter}>{titleLetter}</motion.span>
-                                ))}
+                            <motion.span className='text-end'>
+                                London, Ontario
                             </motion.span>
                         </motion.div>
                     </motion.div>
                     <motion.div
-                        className='flex justify-center overflow-hidden w-3/4 md:w-[500px] md:h-[318px]'
-                        key='homeImageContainer'
-                        id='homeImageContainer'
-                        onAnimationStart={() => {
-                            const element = document.getElementById('homeImageContainer')
-                            element.classList.add('rounded-lg')
-                        }}
-                        onAnimationComplete={() => {
-                            const element = document.getElementById('homeImageContainer')
-                            element.classList.remove('rounded-lg')
-                        }}
-                        initial={{
-                            y: windowSize[0] < 768 ? '-69%' : '-50%',
-                            marginBottom: windowSize[0] < 768 ? 2 : 3,
-                        }}
-                        animate={{
-                            y: 0,
-                            width: windowSize[0],
-                            height: windowSize[1] - 200,
-                            transition: {delay: 0.35, ...homeTransition}
-                        }}>
-                        <motion.div className='flex justify-center' transition={homeTransition}>
-                            <motion.img
-                                className='flex object-cover items-center justify-center object-top md:w-[500px]'
-                                key='homeImage'
-                                src={require('../assets/splash/splash_image3.webp')}
-                                alt='Samuel Catania'
-                                style={{scale: scale}}
-                                initial={{
-                                    scale: windowSize[0] < 768 ? 1 : 1.1,
-                                    height: '100%',
-                                }}
-                                animate={{
-                                    scale: 1.0,
-                                    width: windowSize[0],
-                                    height: windowSize[1] - 200,
-                                    transition: {delay: 0.35, ...homeTransition}
-                                }}/>
-                        </motion.div>
+                        className='grid grid-cols-2 gap-4 md:gap-10 text-4xl sm:text-6xl
+                            md:text-7xl lg:text-8xl xl:text-9xl font-hahmlet h-auto'
+                        style={{opacity: scale}}>
+                        <motion.span className='flex' variants={firstName}>
+                            {titleFirstName.map((titleLetter, id) => (
+                                <motion.span key={id} variants={letter}>
+                                    {titleLetter}
+                                </motion.span>
+                            ))}
+                        </motion.span>
+                        <motion.span className='flex' variants={lastName}>
+                            {titleLastName.map((titleLetter, id) => (
+                                <motion.span key={id} variants={letter}>
+                                    {titleLetter}
+                                </motion.span>
+                            ))}
+                        </motion.span>
                     </motion.div>
-                </div>
+                </motion.div>
+                <motion.div
+                    className='flex justify-center overflow-hidden w-3/4 md:w-[500px] md:h-[318px]'
+                    key='homeImageContainer'
+                    id='homeImageContainer'
+                    onAnimationStart={() => {
+                        const element = document.getElementById('homeImageContainer')
+                        element.classList.add('rounded-lg')
+                    }}
+                    onAnimationComplete={() => {
+                        const element = document.getElementById('homeImageContainer')
+                        element.classList.remove('rounded-lg')
+                    }}
+                    initial={{
+                        y: windowSize[0] < 768 ? '-69%' : '-44%',
+                        marginBottom: windowSize[0] < 768 ? 2 : 1,
+                    }}
+                    animate={{
+                        y: 0,
+                        width: windowSize[0],
+                        height: windowSize[0] < 768 ? windowSize[1] - 140 : windowSize[1] - 240,
+                        transition: {delay: 0.35, ...homeTransition}
+                    }}
+                >
+                    <motion.div className='flex justify-center' transition={homeTransition}>
+                        <motion.img
+                            className='flex object-cover items-center justify-center object-top md:w-[500px]'
+                            key='homeImage'
+                            src={require('../assets/splash/splash_image3.webp')}
+                            alt='Samuel Catania'
+                            initial={{
+                                scale: windowSize[0] < 768 ? 1 : 1.1,
+                                height: '100%',
+                            }}
+                            animate={{
+                                scale: 1.0,
+                                width: windowSize[0],
+                                height: windowSize[0] < 768 ? windowSize[1] - 140 : windowSize[1] - 240,
+                                transition: {delay: 0.35, ...homeTransition}
+                            }}/>
+                    </motion.div>
+                </motion.div>
             </div>
             {canScroll &&
                 <div className='relative z-10'>

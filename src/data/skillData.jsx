@@ -7,5 +7,7 @@ export const skillData = [
     'Tailwind',
     'Git',
     'MongoDB',
-    'SQL',
-    'Java']
+    'MySQL',
+    'Java',
+    'HTML',
+    'NodeJS']
