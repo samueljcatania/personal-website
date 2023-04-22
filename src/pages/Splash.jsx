@@ -28,6 +28,7 @@ function Splash() {
                             {(src) => <motion.img className='w-full'
                                                   whileHover={{scale: 1.1}}
                                                   transition={splashTransition}
+                                                  exit={{scale: 1.1}}
                                                   src={src}
                                                   alt='Samuel Catania'/>}
                         </ProgressiveImage>

@@ -99,33 +99,31 @@ function Home() {
                         element.classList.remove('rounded-lg')
                     }}
                     initial={{
-                        y: windowSize[0] < 768 ? '-69%' : '-44%',
-                        marginBottom: windowSize[0] < 768 ? 2 : 1,
+                        height: windowSize[0] < 768 ? windowSize[0] * 3 / 4 * 0.636 : '',
+                        y: '-44%',
+                        marginBottom: 1,
                     }}
                     animate={{
                         y: 0,
                         width: windowSize[0],
                         height: windowSize[0] < 768 ? windowSize[1] - 140 : windowSize[1] - 240,
                         transition: {delay: 0.35, ...homeTransition}
-                    }}
-                >
-                    <motion.div className='flex justify-center' transition={homeTransition}>
-                        <motion.img
-                            className='flex object-cover items-center justify-center object-top md:w-[500px]'
-                            key='homeImage'
-                            src={require('../assets/splash/splash_image3.webp')}
-                            alt='Samuel Catania'
-                            initial={{
-                                scale: windowSize[0] < 768 ? 1 : 1.1,
-                                height: '100%',
-                            }}
-                            animate={{
-                                scale: 1.0,
-                                width: windowSize[0],
-                                height: windowSize[0] < 768 ? windowSize[1] - 140 : windowSize[1] - 240,
-                                transition: {delay: 0.35, ...homeTransition}
-                            }}/>
-                    </motion.div>
+                    }}>
+                    <motion.img
+                        className='flex object-cover items-center justify-center object-top md:w-[500px]'
+                        key='homeImage'
+                        src={require('../assets/splash/splash_image3.webp')}
+                        alt='Samuel Catania'
+                        initial={{
+                            scale: windowSize[0] < 768 ? 1 : 1.1,
+                            height: '100%',
+                        }}
+                        animate={{
+                            scale: 1.0,
+                            width: windowSize[0],
+                            height: windowSize[0] < 768 ? windowSize[1] - 140 : windowSize[1] - 240,
+                            transition: {delay: 0.35, ...homeTransition}
+                        }}/>
                 </motion.div>
             </div>
             {canScroll &&
