@@ -1,70 +1,5 @@
-// function Navbar() {
-//     return (
-//         <nav className='bg-gray-50 flex fixed w-screen mt-6'>
-//             <div className='flex-1 flex justify-center mr-auto'>
-//                 <a href='/' className='mx-2 font-nunito'>Samuel Catania</a>
-//             </div>
-//             <div className='flex-1 flex justify-center ml-auto'>
-//                 <a href='/home' className='mx-2 font-nunito'>Home</a>
-//             </div>
-//         </nav>
-//     )
-// }
-//
-// export default Navbar;
-
-import React, {useState, useEffect} from 'react';
-
-// function Navbar() {
-//     const [isSticky, setIsSticky] = useState(false);
-//
-//     useEffect(() => {
-//         const handleScroll = () => {
-//             if (true) {
-//                 setIsSticky(true);
-//             } else {
-//                 setIsSticky(false);
-//             }
-//         };
-//
-//         window.addEventListener('scroll', handleScroll);
-//
-//         return () => {
-//             window.removeEventListener('scroll', handleScroll);
-//         };
-//     }, []);
-//
-//     return (
-//         <nav
-//             className={`flex items-center justify-between flex-wrap p-6 bg-white shadow-lg ${isSticky ? 'fixed top-0 left-0 right-0' : ''}`}>
-//             <div className="flex items-center flex-shrink-0 text-black mr-6">
-//                 <span className="font-semibold text-xl font-hahmlet tracking-tight">Samuel Catania</span>
-//             </div>
-//             <div className={`w-full flex-grow lg:flex lg:items-center lg:w-auto ${isSticky ? 'block' : 'hidden'}`}>
-//                 <div className="text-sm lg:flex-grow">
-//                     <a href="#responsive-header"
-//                        className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-500 mr-4">
-//                         Home
-//                     </a>
-//                     <a href="#responsive-header"
-//                        className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-500 mr-4">
-//                         About
-//                     </a>
-//                     <a href="#responsive-header"
-//                        className="block mt-4 lg:inline-block lg:mt-0 text-black hover:text-gray-500">
-//                         Contact
-//                     </a>
-//                 </div>
-//                 <div>
-//                     <button
-//                         className="inline-block px-4 py-2 leading-none border rounded text-black border-black hover:text-gray-500 hover:border-gray-500 mt-4 lg:mt-0">
-//                         Theme
-//                     </button>
-//                 </div>
-//             </div>
-//         </nav>
-//     );
-// }
+import React from 'react';
+import {Link} from "react-router-dom";
 
 function Navbar({refs}) {
     const scrollTo = (ref) => {
@@ -73,35 +8,17 @@ function Navbar({refs}) {
         }
     }
 
-    const [isSticky, setIsSticky] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (true) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
-        <nav className='flex items-center justify-between flex-wrap p-6 shadow-lg'>
-            <div className="flex items-center flex-shrink-0 text-black mr-6">
-                <span className="font-semibold text-xl font-hahmlet tracking-tight">Samuel Catania</span>
+        <nav className='flex items-center flex-wrap p-4 bg-theme shadow-lg sticky top-0 z-20'>
+            <div className='flex items-center flex-shrink-0 mr-6'>
+                <span className='font-semibold text-xl font-hahmlet'>Samuel Catania</span>
             </div>
             <div className='flex-grow flex items-center w-auto'>
-                <div className="text-sm lg:flex-grow">
-                    <a className="mt-4 inline-block lg:mt-0 mr-4"
-                       href="/">
+                <div className='text-sm lg:flex-grow'>
+                    <Link className="mt-4 inline-block lg:mt-0 mr-4"
+                          to='/'>
                         Splash
-                    </a>
+                    </Link>
                     <button className="block mt-4 lg:inline-block lg:mt-0 mr-4"
                             onClick={() => scrollTo(refs.about)}>
                         About
@@ -122,7 +39,8 @@ function Navbar({refs}) {
                 <div>
                     <button
                         className="inline-block px-4 py-2 leading-none border rounded text-black border-black mt-4 lg:mt-0">
-                        T
+                        <img src={require('../assets/navbar/Dark-Mode_512.png')} alt='Change Light/Dark Mode'
+                             width='24'/>
                     </button>
                 </div>
             </div>

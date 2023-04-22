@@ -7,7 +7,6 @@ function SingleSkill({skillName, id}) {
     const ref = useRef(null);
     const isInView = useInView(ref, {
         once: true,
-        amount: 'all',
         margin: '0px 300px -5% 300px'
     })
 
@@ -25,7 +24,7 @@ function SingleSkill({skillName, id}) {
             <motion.div className='flex flex-col items-center border rounded-lg'
                         whileHover={{scale: 1.1}}>
                 <div className='flex place-items-center p-4 pl-20 pr-20 gap-2'>
-                    <img src={require('../assets/skills/32/' + skillName + '.png')} alt={skillName} width='32'/>
+                    <img src={require('../assets/skills/512/' + skillName + '_512.png')} alt={skillName} width='32'/>
                     <h3 className='text-2xl font-nunito font-bold'>{skillName}</h3>
                 </div>
             </motion.div>

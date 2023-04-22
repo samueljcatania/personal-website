@@ -58,27 +58,28 @@ function Home() {
                                         y: 0,
                                         transition: {delay: 1.2, ...homeTransition},
                                     }}>
-                            <motion.div className='grid grid-cols-2 h-10 text-xs sm:text-base'>
-                                <motion.span className='text-start font-nunito'>
+                            <motion.div className='grid grid-cols-2 h-10 text-xs sm:text-base font-nunito'>
+                                <motion.span className='text-start'>
                                     Western University
                                 </motion.span>
-                                <motion.span className='text-end font-nunito'>
+                                <motion.span className='text-end'>
                                     London, Ontario
                                 </motion.span>
                             </motion.div>
                         </motion.div>
-                        <motion.div className='grid grid-cols-2 mb-12 md:mb-8 gap-4 md:gap-10' style={{opacity: scale}}>
+                        <motion.div
+                            className='grid grid-cols-2 mb-12 md:mb-8 gap-4 md:gap-10 text-5xl tex sm:text-6xl
+                            md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
+                            style={{opacity: scale}}>
                             <motion.span className='flex' variants={firstName}>
                                 {titleFirstName.map((titleLetter, id) => (
                                     <motion.span key={id}
-                                                 className='text-5xl tex sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
                                                  variants={letter}>{titleLetter}</motion.span>
                                 ))}
                             </motion.span>
                             <motion.span className='flex' variants={lastName}>
                                 {titleLastName.map((titleLetter, id) => (
                                     <motion.span key={id}
-                                                 className='text-5xl sm:text-6xl md:text-7xl lg:text-9xl xl::text-10xl font-hahmlet'
                                                  variants={letter}>{titleLetter}</motion.span>
                                 ))}
                             </motion.span>
@@ -105,15 +106,14 @@ function Home() {
                             width: windowSize[0],
                             height: windowSize[1] - 200,
                             transition: {delay: 0.35, ...homeTransition}
-                        }}
-                    >
+                        }}>
                         <motion.div className='flex justify-center' transition={homeTransition}>
                             <motion.img
                                 className='flex object-cover items-center justify-center object-top md:w-[500px]'
                                 key='homeImage'
                                 src={require('../assets/splash/splash_image3.webp')}
                                 alt='Samuel Catania'
-                                // style={{scale: scale}}
+                                style={{scale: scale}}
                                 initial={{
                                     scale: windowSize[0] < 768 ? 1 : 1.1,
                                     height: '100%',
@@ -123,25 +123,24 @@ function Home() {
                                     width: windowSize[0],
                                     height: windowSize[1] - 200,
                                     transition: {delay: 0.35, ...homeTransition}
-                                }}
-                            />
+                                }}/>
                         </motion.div>
                     </motion.div>
                 </div>
             </div>
             {canScroll &&
-                <div>
+                <div className='relative z-10'>
                     <Navbar refs={refs}/>
-                    <div ref={refs.about}>
+                    <div className='scroll-mt-32' ref={refs.about}>
                         <About/>
                     </div>
-                    <div ref={refs.skills}>
+                    <div className='scroll-mt-32' ref={refs.skills}>
                         <Skills/>
                     </div>
-                    <div ref={refs.projects}>
+                    <div className='scroll-mt-32' ref={refs.projects}>
                         <Projects/>
                     </div>
-                    <div ref={refs.contact}>
+                    <div className='scroll-mt-32' ref={refs.contact}>
                         <Contact/>
                     </div>
                 </div>
