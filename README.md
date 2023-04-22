@@ -1,5 +1,5 @@
 <div align='center'>
-  <img alt='Website Favicon' src='' width='100px' />
+  <img alt='Website Favicon' src='https://user-images.githubusercontent.com/69449284/233753518-b4947389-4619-4b84-a56a-b8537371e376.png' width='100px' />
 </div>
 <h1 align='center'>
   samueljcatania.com
