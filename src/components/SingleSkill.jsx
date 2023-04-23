@@ -21,9 +21,9 @@ function SingleSkill({skillName, id}) {
                         opacity: isInView ? 1 : 0,
                         transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1)'
                     }}>
-            <motion.div className='flex flex-col items-center border rounded-lg'
+            <motion.div className='flex flex-col items-center border rounded-lg shadow-md'
                         whileHover={{scale: 1.1}}>
-                <div className='flex place-items-center p-4 pl-20 pr-20 gap-2'>
+                <div className='flex place-items-center p-4 gap-2'>
                     <img src={require('../assets/skills/512/' + skillName + '_512.png')} alt={skillName} width='32'/>
                     <h3 className='text-2xl font-nunito font-bold'>{skillName}</h3>
                 </div>

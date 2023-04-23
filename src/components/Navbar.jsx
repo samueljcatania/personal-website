@@ -1,7 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar({refs}) {
+    const windowSize = useWindowSize()
+
     const scrollTo = (ref) => {
         if (ref && ref.current) {
             ref.current.scrollIntoView({behavior: 'smooth', block: 'start'})
@@ -9,41 +12,38 @@ function Navbar({refs}) {
     }
 
     return (
-        <nav className='flex items-center flex-wrap p-4 bg-theme shadow-lg sticky top-0 z-20'>
-            <div className='flex items-center flex-shrink-0 mr-6'>
-                <span className='font-semibold text-xl font-hahmlet'>Samuel Catania</span>
-            </div>
-            <div className='flex-grow flex items-center w-auto'>
-                <div className='text-sm lg:flex-grow'>
-                    <Link className="mt-4 inline-block lg:mt-0 mr-4"
-                          to='/'>
-                        Splash
-                    </Link>
-                    <button className="block mt-4 lg:inline-block lg:mt-0 mr-4"
-                            onClick={() => scrollTo(refs.about)}>
-                        About
-                    </button>
-                    <button className="block mt-4 lg:inline-block lg:mt-0 mr-4"
-                            onClick={() => scrollTo(refs.skills)}>
-                        Skills
-                    </button>
-                    <button className="block mt-4 lg:inline-block lg:mt-0 mr-4"
-                            onClick={() => scrollTo(refs.projects)}>
-                        Projects
-                    </button>
-                    <button className="block mt-4 lg:inline-block lg:mt-0 mr-4"
-                            onClick={() => scrollTo(refs.contact)}>
-                        Contact
-                    </button>
-                </div>
-                <div>
-                    <button
-                        className="inline-block px-4 py-2 leading-none border rounded text-black border-black mt-4 lg:mt-0">
+        <nav className='grid grid-cols-1 sm:flex flex-wrap p-3 bg-theme shadow-lg sticky top-0 z-20'>
+            <div className='flex justify-between'>
+                <Link to='/'>
+                    <div className='flex align-middle pt-1 sm:pt-0'>
+                        <span className='font-semibold text-xl font-hahmlet'>Samuel Catania</span>
+                    </div>
+                </Link>
+                {windowSize[0] < 640 &&
+                    <button className='flex justify-end border rounded-md border-black'>
                         <img src={require('../assets/navbar/Dark-Mode_512.png')} alt='Change Light/Dark Mode'
-                             width='24'/>
-                    </button>
-                </div>
+                             width='32' height='32'/>
+                    </button>}
             </div>
+            <div className='flex-grow flex justify-start pt-2 sm:pt-0 mr-7 sm:mx-7 w-auto text-sm gap-5'>
+                <button onClick={() => scrollTo(refs.about)}>
+                    About
+                </button>
+                <button onClick={() => scrollTo(refs.skills)}>
+                    Skills
+                </button>
+                <button onClick={() => scrollTo(refs.projects)}>
+                    Projects
+                </button>
+                <button onClick={() => scrollTo(refs.contact)}>
+                    Contact
+                </button>
+            </div>
+            {windowSize[0] >= 640 &&
+                <button className='border rounded-md border-black'>
+                    <img src={require('../assets/navbar/Dark-Mode_512.png')} alt='Change Light/Dark Mode'
+                         width='32' height='32'/>
+                </button>}
         </nav>
     );
 }
