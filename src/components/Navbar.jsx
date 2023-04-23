@@ -3,6 +3,8 @@ import {Link} from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar({refs}) {
+    const windowSize = useWindowSize()
+
     useEffect(() => {
         let themeToggleDarkIcon = document.getElementById('darkModeIcon');
         let themeToggleLightIcon = document.getElementById('lightModeIcon');
@@ -18,6 +20,7 @@ function Navbar({refs}) {
 
         themeToggleButton.addEventListener('click', function () {
 
+            
             themeToggleDarkIcon.classList.toggle('hidden');
             themeToggleLightIcon.classList.toggle('hidden');
 
@@ -52,7 +55,6 @@ function Navbar({refs}) {
         });
     }, [])
 
-    const windowSize = useWindowSize()
 
     const scrollTo = (ref) => {
         if (ref && ref.current) {

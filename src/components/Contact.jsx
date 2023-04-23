@@ -11,24 +11,36 @@ function Contact() {
                 <div className='sm:w-3/4 place-self-center'>
                     <form action='#' className='space-y-8'>
                         <div>
-                            <input type='text' id='name'
-                                   className='block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
-                                   placeholder='Name' required/>
+                            <input className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
+                            border-gray-300 focus:border-primary-500 dark:bg-zinc-700 dark:border-zinc-400
+                            dark:text-dark-theme-text dark:focus:border-zinc-400'
+                                   type='text'
+                                   id='name'
+                                   placeholder='Name'
+                                   required/>
                         </div>
                         <div>
-                            <input type='email' id='email'
-                                   className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
-                                   placeholder='Email' required/>
+                            <input className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
+                            border-gray-300 focus:border-primary-500 dark:bg-zinc-700 dark:border-zinc-400
+                            dark:text-dark-theme-text dark:focus:border-zinc-400'
+                                   type='email'
+                                   id='email'
+                                   placeholder='Email'
+                                   required/>
                         </div>
                         <div className='sm:col-span-2'>
                         <textarea
-                            className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
+                            className='block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border
+                            border-gray-300 focus:border-primary-500 dark:bg-zinc-700 dark:border-zinc-400
+                            dark:text-dark-theme-text dark:focus:border-zinc-400'
                             id='message'
-                            rows='6'>
+                            placeholder='Body'
+                            rows='6'
+                            required>
                         </textarea>
                         </div>
                         <button
-                            className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+                            className='border border-black bg-black hover:bg-opacity-60 text-white font-bold py-2 px-4 rounded'
                             type='submit'>
                             Send
                         </button>
