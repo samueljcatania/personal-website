@@ -1,59 +1,60 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar({refs}) {
     const windowSize = useWindowSize()
 
-    useEffect(() => {
+    //     let themeToggleDarkIcon = document.getElementById('darkModeIcon');
+    // let themeToggleLightIcon = document.getElementById('lightModeIcon');
+    //
+    // if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    //     themeToggleDarkIcon.classList.remove('hidden');
+    //
+    // } else {
+    //     themeToggleLightIcon.classList.remove('hidden');
+    //
+    // }
+    //
+    // let themeToggleButton = document.getElementById('themeButton');
+    // let bodyStyles = document.body.style;
+
+    function handleThemeClick(event) {
+        event.preventDefault();
+
         let themeToggleDarkIcon = document.getElementById('darkModeIcon');
         let themeToggleLightIcon = document.getElementById('lightModeIcon');
-
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            themeToggleLightIcon.classList.remove('hidden');
-        } else {
-            themeToggleDarkIcon.classList.remove('hidden');
-        }
-
-        let themeToggleButton = document.getElementById('themeButton');
         let bodyStyles = document.body.style;
 
-        themeToggleButton.addEventListener('click', function () {
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
 
-            
-            themeToggleDarkIcon.classList.toggle('hidden');
-            themeToggleLightIcon.classList.toggle('hidden');
+        if (localStorage.getItem('color-theme')) {
+            if (localStorage.getItem('color-theme') === 'light') {
+                document.documentElement.classList.add('dark');
 
-            if (localStorage.getItem('color-theme')) {
-
-
-                if (localStorage.getItem('color-theme') === 'light') {
-
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                    bodyStyles.setProperty('--background-color', '#27272a');
-
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                    bodyStyles.setProperty('--background-color', '#f0d8bb');
-                }
+                localStorage.setItem('color-theme', 'dark');
+                bodyStyles.setProperty('--background-color', '#27272a');
 
             } else {
-                if (document.documentElement.classList.contains('dark')) {
-                    document.documentElement.classList.remove('dark');
-                    localStorage.setItem('color-theme', 'light');
-                    bodyStyles.setProperty('--background-color', '#f0d8bb');
-
-                } else {
-                    document.documentElement.classList.add('dark');
-                    localStorage.setItem('color-theme', 'dark');
-                    bodyStyles.setProperty('--background-color', '#27272a');
-                }
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                bodyStyles.setProperty('--background-color', '#f0d8bb');
             }
 
-        });
-    }, [])
+        } else {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                bodyStyles.setProperty('--background-color', '#f0d8bb');
+
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                bodyStyles.setProperty('--background-color', '#27272a');
+            }
+        }
+    }
 
 
     const scrollTo = (ref) => {
@@ -69,7 +70,9 @@ function Navbar({refs}) {
                 <Link to='/'>
                     <div className='flex align-middle pt-0.5 sm:pt-0'>
                         <span
-                            className='font-semibold text-xl font-hahmlet dark:text-dark-theme-text'>Samuel Catania</span>
+                            className='font-semibold text-xl font-hahmlet dark:text-dark-theme-text'>
+                            Samuel Catania
+                        </span>
                     </div>
                 </Link>
                 {windowSize[0] < 640 &&
@@ -94,14 +97,16 @@ function Navbar({refs}) {
                 </button>
             </div>
             {windowSize[0] >= 640 &&
-                <button className='border rounded-md border-black dark:border-dark-theme-text' id='themeButton'>
+                <button className='border rounded-md border-black dark:border-dark-theme-text'
+                        id='themeButton'
+                        onClick={handleThemeClick}>
                     <img className='hidden'
                          src={require('../assets/navbar/Dark-Mode_512.png')}
                          id='darkModeIcon'
                          alt='Change Light/Dark Mode'
                          width='32' height='32'/>
                     <img className='hidden'
-                         src={require('../assets/navbar/Dark-Mode_512.png')}
+                         src={require('../assets/navbar/Light-Mode_512.png')}
                          id='lightModeIcon'
                          alt='Change Light/Dark Mode'
                          width='32' height='32'/>

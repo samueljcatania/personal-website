@@ -18,8 +18,7 @@ function About() {
                     games.
                 </p>
             </div>
-        </div>
-    )
+        </div>)
 }
 
 export default About;

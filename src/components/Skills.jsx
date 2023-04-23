@@ -20,8 +20,7 @@ function Skills() {
                         <SingleSkill key={id} skillName={skillName} id={id}></SingleSkill>))}
                 </div>
             </div>
-        </div>
-    )
+        </div>)
 }
 
 export default Skills;
