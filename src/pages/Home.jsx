@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import {firstName, lastName, letter} from "../data/variantData"
 import {homeTransition} from "../data/transitionData"
 import useWindowSize from "../hooks/useWindowSize";
+import Footer from "../components/Footer";
 
 
 function Home() {
@@ -37,7 +38,7 @@ function Home() {
     }, [canScroll]);
 
     return (
-        !isReloading && <div>
+        !isReloading && <div className='bg-theme dark:bg-dark-theme'>
             <div className='grid grid-cols-1 w-screen h-screen justify-items-center overflow-hidden'>
                 <motion.div className='grid justify-items-center h-[100px] md:h-[200px] mt-10'
                             onAnimationComplete={() => {
@@ -58,17 +59,17 @@ function Home() {
                                     transition: {delay: 1.2, ...homeTransition},
                                 }}>
                         <motion.div className='grid grid-cols-2 h-auto text-xs sm:text-base font-nunito'>
-                            <motion.span className='text-start'>
+                            <motion.span className='text-start dark:text-dark-theme-text'>
                                 Western University
                             </motion.span>
-                            <motion.span className='text-end'>
+                            <motion.span className='text-end dark:text-dark-theme-text'>
                                 London, Ontario
                             </motion.span>
                         </motion.div>
                     </motion.div>
                     <motion.div
                         className='grid grid-cols-2 gap-4 md:gap-10 text-4xl sm:text-6xl
-                            md:text-7xl lg:text-8xl xl:text-9xl font-hahmlet h-auto'
+                            md:text-7xl lg:text-8xl xl:text-9xl font-hahmlet h-auto dark:text-dark-theme-text'
                         style={{opacity: scale}}>
                         <motion.span className='flex' variants={firstName}>
                             {titleFirstName.map((titleLetter, id) => (
@@ -143,6 +144,7 @@ function Home() {
                     </div>
                 </div>
             }
+            <Footer/>
         </div>
     )
 }

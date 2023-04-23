@@ -18,7 +18,7 @@ function Splash() {
     UseImagePreloader(pictures)
 
     return (
-        <div className='flex justify-center items-center h-screen w-screen'>
+        <div className='flex justify-center items-center h-screen w-screen bg-theme dark:bg-dark-theme'>
             <div className='grid grid-cols-1 place-items-center w-screen'>
                 <div className='flex rounded-lg overflow-hidden w-3/4 md:w-[500px]'>
                     <Link to={`/home`}>
@@ -36,12 +36,12 @@ function Splash() {
                 </div>
                 <div className='flex justify-center h-10 w-screen'>
                     <div className='grid grid-cols-2 h-10 w-3/4 md:w-[500px]'>
-                        <motion.div className='container text-start font-nunito text-xs sm:text-base'
+                        <motion.div className='container text-start font-nunito text-xs sm:text-base dark:text-warmGray-100'
                                     exit={{opacity: 0}}
                                     transition={splashTransition}>
                             Western University
                         </motion.div>
-                        <motion.div className='container text-end font-nunito text-xs sm:text-base'
+                        <motion.div className='container text-end font-nunito text-xs sm:text-base dark:text-warmGray-100'
                                     exit={{opacity: 0}}
                                     transition={splashTransition}>
                             London, Ontario

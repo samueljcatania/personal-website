@@ -32,8 +32,17 @@
             }
         }(window.location))
     </script>
-
-    <title>Samuel Catania</title>
+    <script>
+        if (
+            localStorage.getItem('color-theme') === 'dark' ||
+            (!('color-theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQS7MCXRH9"></script>
 <script>
@@ -46,7 +55,7 @@
     gtag('js', new Date());
     gtag('config', 'G-DQS7MCXRH9');
 </script>
-<body style="background-color: #f0d8bb">
+<body>
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 </body>
