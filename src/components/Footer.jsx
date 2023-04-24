@@ -8,10 +8,10 @@ function Footer({darkMode}) {
                        target='_blank'
                        rel='noopener noreferrer'>
                         {darkMode
-                            ? <img src={require('../assets/footer/dark/GitHub_512_DarkMode.png')}
+                            ? <img src={require('../assets/footer/dark-mode/GitHub_512_DarkMode.png')}
                                    alt='Link to GitHub'
                                    width='32'/>
-                            : <img src={require('../assets/footer/light/GitHub_512_LightMode.png')}
+                            : <img src={require('../assets/footer/light-mode/GitHub_512_LightMode.png')}
                                    alt='Link to GitHub'
                                    width='32'/>
                         }
@@ -21,10 +21,10 @@ function Footer({darkMode}) {
                        target='_blank'
                        rel='noopener noreferrer'>
                         {darkMode
-                            ? <img src={require('../assets/footer/dark/LinkedIn_512_DarkMode.png')}
+                            ? <img src={require('../assets/footer/dark-mode/LinkedIn_512_DarkMode.png')}
                                    alt='Link to LinkedIn'
                                    width='32'/>
-                            : <img src={require('../assets/footer/light/LinkedIn_512_LightMode.png')}
+                            : <img src={require('../assets/footer/light-mode/LinkedIn_512_LightMode.png')}
                                    alt='Link to LinkedIn'
                                    width='32'/>
                         }
