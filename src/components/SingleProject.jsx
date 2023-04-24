@@ -21,7 +21,7 @@ function SingleProject({projectInfo, id}) {
                 transition={splashTransition}>
                 <Link to='/projects'>
                     <img className={'' + (id % 2 !== 0 ? 'rounded-l-xl' : 'rounded-r-xl')}
-                        src={require('../assets/splash/splash_image3.webp')}
+                        src={require('../assets/splash/splash_3000x1907.webp')}
                          alt={projectInfo.name}/>
                 </Link>
             </motion.div>

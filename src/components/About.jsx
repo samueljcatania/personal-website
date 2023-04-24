@@ -5,7 +5,7 @@ function About() {
                 <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
                     About
                 </h3>
-                <div className='border-2 w-40 md:w-52 mb-9 border-black dark:border-dark-theme-text'></div>
+                <div className='border-2 w-40 md:w-52 mb-10 border-black dark:border-dark-theme-text'></div>
                 <p className='font-nunito text-justify dark:text-dark-theme-text'>
                     I’m a third-year bachelor's student pursuing an Honours Specialization in Computer Science at
                     Western University, with a passion for exploring the latest trends and topics in all things machine

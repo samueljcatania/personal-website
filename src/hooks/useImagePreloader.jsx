@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 
-function preloadImage(src: string) {
+function preloadImage(src) {
     return new Promise((resolve, reject) => {
         const img = new Image()
         img.onload = function () {
@@ -13,7 +13,7 @@ function preloadImage(src: string) {
     })
 }
 
-function useImagePreloader(imageList: string[]) {
+function useImagePreloader(imageList) {
     useEffect(() => {
         let isCancelled = false
 
@@ -22,7 +22,7 @@ function useImagePreloader(imageList: string[]) {
                 return
             }
 
-            const imagesPromiseList: Promise<any>[] = []
+            const imagesPromiseList = []
             for (const i of imageList) {
                 imagesPromiseList.push(preloadImage(i))
             }

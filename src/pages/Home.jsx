@@ -125,7 +125,7 @@ function Home() {
                     <motion.img
                         className='flex object-cover items-center justify-center object-top md:w-[500px]'
                         key='homeImage'
-                        src={require('../assets/splash/splash_image3.webp')}
+                        src={require('../assets/splash/splash_3000x1907.webp')}
                         alt='Samuel Catania'
                         initial={{
                             scale: windowSize[0] < 768 ? 1 : 1.1,
