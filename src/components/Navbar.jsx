@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
-function Navbar({refs, setDarkMode}) {
+function Navbar({refs, darkMode, setDarkMode}) {
     const windowSize = useWindowSize()
 
     // let themeToggleDarkIcon = document.getElementById('darkModeIcon');
@@ -15,6 +15,15 @@ function Navbar({refs, setDarkMode}) {
     //     themeToggleLightIcon.classList.remove('hidden');
     //
     // }
+
+    useEffect(() => {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setDarkMode(true)
+
+        } else {
+            setDarkMode(false)
+        }
+    })
 
 
     function handleThemeClick(event) {
@@ -101,13 +110,13 @@ function Navbar({refs, setDarkMode}) {
                 <button id='themeButton'
                         onClick={handleThemeClick}>
                     <img
-                        className={'' + (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'hidden' : '')}
+                        className={'' + (darkMode ? 'hidden' : '')}
                         src={require('../assets/navbar/Dark-Mode_512.png')}
                         id='darkModeIcon'
                         alt='Change Light/Dark Mode'
                         width='32' height='32'/>
                     <img
-                        className={'' + (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? '' : 'hidden')}
+                        className={'' + (darkMode ? '' : 'hidden')}
                         src={require('../assets/navbar/Light-Mode_512.png')}
                         id='lightModeIcon'
                         alt='Change Light/Dark Mode'

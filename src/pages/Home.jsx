@@ -130,7 +130,7 @@ function Home() {
             </div>
             {canScroll &&
                 <div className='relative z-10'>
-                    <Navbar refs={refs} setDarkMode={setDarkMode}/>
+                    <Navbar refs={refs} darkMode={darkMode} setDarkMode={setDarkMode}/>
                     <div className='scroll-mt-32' ref={refs.about}>
                         <About/>
                     </div>
