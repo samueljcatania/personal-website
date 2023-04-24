@@ -1,37 +1,15 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
 function Navbar({refs, darkMode, setDarkMode}) {
     const windowSize = useWindowSize()
 
-    // let themeToggleDarkIcon = document.getElementById('darkModeIcon');
-    // let themeToggleLightIcon = document.getElementById('lightModeIcon');
-    //
-    // if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    //     themeToggleDarkIcon.classList.remove('hidden');
-    //
-    // } else {
-    //     themeToggleLightIcon.classList.remove('hidden');
-    //
-    // }
-
-    useEffect(() => {
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            setDarkMode(true)
-
-        } else {
-            setDarkMode(false)
-        }
-    })
-
-
     function handleThemeClick(event) {
         event.preventDefault();
 
         let themeToggleDarkIcon = document.getElementById('darkModeIcon');
         let themeToggleLightIcon = document.getElementById('lightModeIcon');
-        let bodyStyles = document.body.style;
 
         themeToggleDarkIcon.classList.toggle('hidden');
         themeToggleLightIcon.classList.toggle('hidden');
@@ -40,13 +18,13 @@ function Navbar({refs, darkMode, setDarkMode}) {
             if (localStorage.getItem('color-theme') === 'light') {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
-                bodyStyles.setProperty('--background-color', '#27272a');
+                document.body.style = 'background-color: #27272a;';
                 setDarkMode(true)
 
             } else {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
-                bodyStyles.setProperty('--background-color', '#f0d8bb');
+                document.body.style = 'background-color: #f0d8bb;';
                 setDarkMode(false)
             }
 
@@ -54,13 +32,13 @@ function Navbar({refs, darkMode, setDarkMode}) {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
-                bodyStyles.setProperty('--background-color', '#f0d8bb');
+                document.body.style = 'background-color: #f0d8bb;';
                 setDarkMode(false)
 
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
-                bodyStyles.setProperty('--background-color', '#27272a');
+                document.body.style = 'background-color: #27272a;';
                 setDarkMode(true)
             }
         }

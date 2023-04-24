@@ -11,7 +11,7 @@ body {
     /*Firefox*/
     scrollbar-width: none;
 
-    background-color: #f0d8bb;
+    /*background-color: #f0d8bb;*/
 }
 
 @media screen and (max-width: 768px) {

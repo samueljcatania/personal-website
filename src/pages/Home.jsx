@@ -25,6 +25,17 @@ function Home() {
     const windowSize = useWindowSize()
 
     useEffect(() => {
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            setDarkMode(true)
+            document.body.style = 'background-color: #27272a;';
+
+        } else {
+            setDarkMode(false)
+            document.body.style = 'background-color: #f0d8bb;';
+        }
+    }, [])
+
+    useEffect(() => {
         window.onbeforeunload = function () {
             setIsReloading(true)
         };
