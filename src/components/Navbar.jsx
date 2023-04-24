@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
-function Navbar({refs}) {
+function Navbar({refs, setDarkMode}) {
     const windowSize = useWindowSize()
 
     // let themeToggleDarkIcon = document.getElementById('darkModeIcon');
@@ -30,14 +30,15 @@ function Navbar({refs}) {
         if (localStorage.getItem('color-theme')) {
             if (localStorage.getItem('color-theme') === 'light') {
                 document.documentElement.classList.add('dark');
-
                 localStorage.setItem('color-theme', 'dark');
                 bodyStyles.setProperty('--background-color', '#27272a');
+                setDarkMode(true)
 
             } else {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
                 bodyStyles.setProperty('--background-color', '#f0d8bb');
+                setDarkMode(false)
             }
 
         } else {
@@ -45,11 +46,13 @@ function Navbar({refs}) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('color-theme', 'light');
                 bodyStyles.setProperty('--background-color', '#f0d8bb');
+                setDarkMode(false)
 
             } else {
                 document.documentElement.classList.add('dark');
                 localStorage.setItem('color-theme', 'dark');
                 bodyStyles.setProperty('--background-color', '#27272a');
+                setDarkMode(true)
             }
         }
     }
@@ -95,8 +98,7 @@ function Navbar({refs}) {
                 </button>
             </div>
             {windowSize[0] >= 640 &&
-                <button className='border rounded-md border-black dark:border-dark-theme-text'
-                        id='themeButton'
+                <button id='themeButton'
                         onClick={handleThemeClick}>
                     <img
                         className={'' + (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'hidden' : '')}

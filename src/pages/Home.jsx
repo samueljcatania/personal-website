@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 
 
 function Home() {
+    const [darkMode, setDarkMode] = useState(false);
     const refs = {about: useRef(null), skills: useRef(null), projects: useRef(null), contact: useRef(null)}
     const titleFirstName = ['S', 'a', 'm', 'u', 'e', 'l']
     const titleLastName = ['C', 'a', 't', 'a', 'n', 'i', 'a']
@@ -37,8 +38,8 @@ function Home() {
         }
     }, [canScroll]);
 
-    return (
-        !isReloading && <div className='bg-theme dark:bg-dark-theme'>
+    return (!isReloading &&
+        <div className='bg-theme dark:bg-dark-theme'>
             <div className='grid grid-cols-1 w-screen h-screen justify-items-center overflow-hidden'>
                 <motion.div className='grid justify-items-center h-[100px] md:h-[200px] mt-10'
                             onAnimationComplete={() => {
@@ -129,12 +130,12 @@ function Home() {
             </div>
             {canScroll &&
                 <div className='relative z-10'>
-                    <Navbar refs={refs}/>
+                    <Navbar refs={refs} setDarkMode={setDarkMode}/>
                     <div className='scroll-mt-32' ref={refs.about}>
                         <About/>
                     </div>
                     <div className='scroll-mt-32' ref={refs.skills}>
-                        <Skills/>
+                        <Skills darkMode={darkMode}/>
                     </div>
                     <div className='scroll-mt-32' ref={refs.projects}>
                         <Projects/>
@@ -144,7 +145,7 @@ function Home() {
                     </div>
                 </div>
             }
-            <Footer/>
+            <Footer darkMode={darkMode}/>
         </div>
     )
 }
