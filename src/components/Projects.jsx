@@ -11,10 +11,10 @@ function Projects() {
                     <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
                         Projects
                     </h3>
-                    <div className='border-2 w-40 md:w-52 mb-20 border-black dark:border-dark-theme-text'></div>
+                    <div className='border-2 w-40 md:w-52 mb-32 border-black dark:border-dark-theme-text'></div>
                 </div>
             </div>
-            <div className='grid w-11/12 gap-40 z-0'>
+            <div className='grid w-11/12 gap-72 z-0'>
                 {projectData.map((projectInfo, id) => (
                     <SingleProject key={id} projectInfo={projectInfo} id={id}></SingleProject>
                 ))}

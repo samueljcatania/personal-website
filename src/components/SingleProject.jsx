@@ -4,23 +4,34 @@ import {splashTransition} from "../data/transitionData";
 
 function SingleProject({projectInfo, id}) {
     return (
-        <div className='grid grid-cols-6 gap-10'>
+        <div className='grid grid-cols-12 gap-10'>
             {id % 2 !== 0 &&
-                <div className='bg-black col-span-2 col-start-2'>
+                <div className='col-span-4 col-start-3 text-end'>
+                    <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
+                        {projectInfo.name}
+                    </h3>
+                    <p className='font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
+                        {projectInfo.description}
+                    </p>
                 </div>
             }
-            <div
-                className={'h-[600px] rounded-xl overflow-hidden bg-black col-span-3 ring-[50px] ' + (id % 2 !== 0 && 'col-end-7')}>
+            <motion.div
+                className={'h-[600px] rounded-xl overflow-hidden bg-black col-span-5 border-y-[100px] ' + (id % 2 !== 0 ? 'col-end-12 border-l-[150px]' : 'col-start-2 border-r-[150px]')}
+                whileHover={{scale: 1.05}}
+                transition={splashTransition}>
                 <Link to='/projects'>
-                    <motion.div whileHover={{scale: 1.1}}
-                                transition={splashTransition}>
-                        <img src={require('../assets/splash/splash_image3.webp')}
-                             alt={projectInfo.name}/>
-                    </motion.div>
+                    <img src={require('../assets/splash/splash_image3.webp')}
+                         alt={projectInfo.name}/>
                 </Link>
-            </div>
+            </motion.div>
             {id % 2 === 0 &&
-                <div className='bg-black col-span-2'>
+                <div className='col-span-4 text-start'>
+                    <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
+                        {projectInfo.name}
+                    </h3>
+                    <p className='font-nunito dark:text-dark-theme-text'>
+                        {projectInfo.description}
+                    </p>
                 </div>
             }
         </div>

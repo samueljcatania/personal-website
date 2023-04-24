@@ -5,7 +5,7 @@ import useWindowSize from "../hooks/useWindowSize";
 function Navbar({refs}) {
     const windowSize = useWindowSize()
 
-    //     let themeToggleDarkIcon = document.getElementById('darkModeIcon');
+    // let themeToggleDarkIcon = document.getElementById('darkModeIcon');
     // let themeToggleLightIcon = document.getElementById('lightModeIcon');
     //
     // if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -15,9 +15,7 @@ function Navbar({refs}) {
     //     themeToggleLightIcon.classList.remove('hidden');
     //
     // }
-    //
-    // let themeToggleButton = document.getElementById('themeButton');
-    // let bodyStyles = document.body.style;
+
 
     function handleThemeClick(event) {
         event.preventDefault();
@@ -65,7 +63,7 @@ function Navbar({refs}) {
 
     return (
         <nav
-            className='grid grid-cols-1 sm:flex flex-wrap p-3 bg-theme shadow-lg sticky top-0 z-20 dark:bg-dark-theme dark:shadow-2xl'>
+            className='grid grid-cols-1 opacity-95 sm:flex flex-wrap p-3 bg-theme shadow-lg sticky top-0 z-20 dark:bg-dark-theme dark:shadow-2xl'>
             <div className='flex justify-between'>
                 <Link to='/'>
                     <div className='flex align-middle pt-0.5 sm:pt-0'>
@@ -100,16 +98,18 @@ function Navbar({refs}) {
                 <button className='border rounded-md border-black dark:border-dark-theme-text'
                         id='themeButton'
                         onClick={handleThemeClick}>
-                    <img className='hidden'
-                         src={require('../assets/navbar/Dark-Mode_512.png')}
-                         id='darkModeIcon'
-                         alt='Change Light/Dark Mode'
-                         width='32' height='32'/>
-                    <img className='hidden'
-                         src={require('../assets/navbar/Light-Mode_512.png')}
-                         id='lightModeIcon'
-                         alt='Change Light/Dark Mode'
-                         width='32' height='32'/>
+                    <img
+                        className={'' + (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'hidden' : '')}
+                        src={require('../assets/navbar/Dark-Mode_512.png')}
+                        id='darkModeIcon'
+                        alt='Change Light/Dark Mode'
+                        width='32' height='32'/>
+                    <img
+                        className={'' + (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) ? '' : 'hidden')}
+                        src={require('../assets/navbar/Light-Mode_512.png')}
+                        id='lightModeIcon'
+                        alt='Change Light/Dark Mode'
+                        width='32' height='32'/>
                 </button>}
         </nav>
     );
