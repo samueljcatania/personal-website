@@ -44,7 +44,6 @@ function Navbar({refs, darkMode, setDarkMode}) {
         }
     }
 
-
     const scrollTo = (ref) => {
         if (ref && ref.current) {
             ref.current.scrollIntoView({behavior: 'smooth', block: 'start'})
@@ -56,36 +55,53 @@ function Navbar({refs, darkMode, setDarkMode}) {
             className='grid grid-cols-1 opacity-95 sm:flex flex-wrap p-3 bg-theme shadow-lg sticky top-0 z-20 dark:bg-dark-theme dark:shadow-2xl'>
             <div className='flex justify-between'>
                 <Link to='/'>
-                    <div className='flex align-middle pt-0.5 sm:pt-0'>
+                    <div className='flex align-middle pt-0.5 sm:pt-0 hover:opacity-70'>
                         <span
-                            className='font-semibold text-xl font-hahmlet dark:text-dark-theme-text'>
+                            className='font-semibold text-xl font-hahmlet sm:ml-4 dark:text-dark-theme-text'>
                             Samuel Catania
                         </span>
                     </div>
                 </Link>
                 {windowSize[0] < 640 &&
-                    <button className='flex justify-end border rounded-md border-black dark:border-dark-theme-text'>
-                        <img src={require('../assets/navbar/Dark-Mode_512.png')} alt='Change Light/Dark Mode'
-                             width='32' height='32'/>
+                    <button className='hover:opacity-70'
+                            id='themeButton'
+                            onClick={handleThemeClick}>
+                        <img
+                            className={'' + (darkMode ? 'hidden' : '')}
+                            src={require('../assets/navbar/Dark-Mode_512.png')}
+                            id='darkModeIcon'
+                            alt='Change Light/Dark Mode'
+                            width='32' height='32'/>
+                        <img
+                            className={'' + (darkMode ? '' : 'hidden')}
+                            src={require('../assets/navbar/Light-Mode_512.png')}
+                            id='lightModeIcon'
+                            alt='Change Light/Dark Mode'
+                            width='32' height='32'/>
                     </button>}
             </div>
             <div
                 className='flex-grow flex justify-start pt-2 sm:pt-0 mr-7 sm:mx-7 w-auto text-sm gap-5 dark:text-dark-theme-text'>
-                <button onClick={() => scrollTo(refs.about)}>
+                <button className='hover:opacity-70'
+                        onClick={() => scrollTo(refs.about)}>
                     About
                 </button>
-                <button onClick={() => scrollTo(refs.skills)}>
+                <button className='hover:opacity-70'
+                        onClick={() => scrollTo(refs.skills)}>
                     Skills
                 </button>
-                <button onClick={() => scrollTo(refs.projects)}>
+                <button className='hover:opacity-70'
+                        onClick={() => scrollTo(refs.projects)}>
                     Projects
                 </button>
-                <button onClick={() => scrollTo(refs.contact)}>
+                <button className='hover:opacity-70'
+                        onClick={() => scrollTo(refs.contact)}>
                     Contact
                 </button>
             </div>
             {windowSize[0] >= 640 &&
-                <button id='themeButton'
+                <button className='hover:opacity-70'
+                    id='themeButton'
                         onClick={handleThemeClick}>
                     <img
                         className={'' + (darkMode ? 'hidden' : '')}

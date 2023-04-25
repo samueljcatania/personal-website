@@ -14,7 +14,7 @@ function Projects() {
                     <div className='border-2 w-40 md:w-52 mb-24 border-black dark:border-dark-theme-text'></div>
                 </div>
             </div>
-            <div className='grid w-11/12 gap-72 z-0'>
+            <div className='grid w-screen sm:w-11/12 gap-72 z-0'>
                 {projectData.map((projectInfo, id) => (
                     <SingleProject key={id} projectInfo={projectInfo} id={id}></SingleProject>
                 ))}

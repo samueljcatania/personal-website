@@ -3,6 +3,7 @@ import {AnimatePresence} from "framer-motion";
 // Pages
 import Splash from "./pages/Splash"
 import Home from "./pages/Home";
+import ThankYou from "./pages/ThankYou";
 // Styles
 import './App.css';
 import {useState} from "react";
@@ -16,6 +17,7 @@ function App() {
             <Routes location={location} key={location.pathname}>
                 <Route path='/' element={<Splash imageSize={imageSize}/>}/>
                 <Route path='/home' element={<Home imageSize={imageSize}/>}/>
+                <Route path='/thank-you' element={<ThankYou/>}/>
             </Routes>
         </AnimatePresence>
     );

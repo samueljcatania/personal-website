@@ -6,7 +6,7 @@ export const projectData = [
         github: 'https://github.com/samueljcatania/smart-doorbell'
     },
     {
-        name: 'This Website (the one you\'re currently on!)',
+        name: 'This Website',
         description: '',
         github: 'https://github.com/samueljcatania/personal-website'
     },
