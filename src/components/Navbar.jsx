@@ -55,7 +55,7 @@ function Navbar({refs, darkMode, setDarkMode}) {
             className='grid grid-cols-1 opacity-95 sm:flex flex-wrap p-3 bg-theme shadow-lg sticky top-0 z-20 dark:bg-dark-theme dark:shadow-2xl'>
             <div className='flex justify-between'>
                 <Link to='/'>
-                    <div className='flex align-middle pt-0.5 sm:pt-0 hover:opacity-70'>
+                    <div className='flex align-middle pt-0.5 sm:pt-0 hover:opacity-70 duration-200'>
                         <span
                             className='font-semibold text-xl font-hahmlet sm:ml-4 dark:text-dark-theme-text'>
                             Samuel Catania
@@ -63,7 +63,7 @@ function Navbar({refs, darkMode, setDarkMode}) {
                     </div>
                 </Link>
                 {windowSize[0] < 640 &&
-                    <button className='hover:opacity-70'
+                    <button className='hover:opacity-70 duration-200'
                             id='themeButton'
                             onClick={handleThemeClick}>
                         <img
@@ -82,25 +82,25 @@ function Navbar({refs, darkMode, setDarkMode}) {
             </div>
             <div
                 className='flex-grow flex justify-start pt-2 sm:pt-0 mr-7 sm:mx-7 w-auto text-sm gap-5 dark:text-dark-theme-text'>
-                <button className='hover:opacity-70'
+                <button className='hover:opacity-70 duration-100'
                         onClick={() => scrollTo(refs.about)}>
                     About
                 </button>
-                <button className='hover:opacity-70'
+                <button className='hover:opacity-70 duration-100'
                         onClick={() => scrollTo(refs.skills)}>
                     Skills
                 </button>
-                <button className='hover:opacity-70'
+                <button className='hover:opacity-70 duration-100'
                         onClick={() => scrollTo(refs.projects)}>
                     Projects
                 </button>
-                <button className='hover:opacity-70'
+                <button className='hover:opacity-70 duration-100'
                         onClick={() => scrollTo(refs.contact)}>
                     Contact
                 </button>
             </div>
             {windowSize[0] >= 640 &&
-                <button className='hover:opacity-70'
+                <button className='hover:opacity-70 duration-200'
                     id='themeButton'
                         onClick={handleThemeClick}>
                     <img

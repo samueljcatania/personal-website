@@ -42,7 +42,8 @@ function Contact() {
                         </textarea>
                         </div>
                         <button
-                            className='bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded dark:bg-white dark:text-black dark:hover:bg-opacity-75'
+                            className='bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded dark:bg-white
+                             dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200'
                             type='submit'>
                             Send
                         </button>

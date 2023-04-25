@@ -3,7 +3,7 @@ function Footer({darkMode}) {
         <div className='mt-20'>
             <div className='font-general-regular flex flex-col justify-center items-center'>
                 <ul className='flex gap-4 my-2'>
-                    <a className='hover:bg-gray-100 p-4 duration-300 rounded-full'
+                    <a className='hover:opacity-50 dark:hover:opacity-30 p-4 duration-200'
                        href='https://github.com/samueljcatania'
                        target='_blank'
                        rel='noopener noreferrer'>
@@ -16,7 +16,7 @@ function Footer({darkMode}) {
                                    width='32'/>
                         }
                     </a>
-                    <a className='hover:bg-gray-100 p-4 duration-300 rounded-full'
+                    <a className='hover:opacity-50 dark:hover:opacity-30 p-4 duration-200'
                        href='https://www.linkedin.com/in/samueljamescatania'
                        target='_blank'
                        rel='noopener noreferrer'>

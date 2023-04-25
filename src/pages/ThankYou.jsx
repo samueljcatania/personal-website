@@ -12,7 +12,7 @@ function ThankYou() {
                 <Link to='/home'>
                     <button
                         className='mt-12 bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded
-                        dark:bg-white dark:text-black dark:hover:bg-opacity-75'>
+                        dark:bg-white dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200'>
                         Return to Home
                     </button>
                 </Link>

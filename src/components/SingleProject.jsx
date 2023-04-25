@@ -16,12 +16,12 @@ function SingleProject({projectInfo, id}) {
                 </div>
             }
             <motion.div
-                className={'h-[600px] w-[850px] relative col-span-5 bg-blue-100 z-0 '
+                className={'h- sm:h-[600px] relative col-span-5 bg-blue-100 z-0 '
                     + (id % 2 !== 0 ? 'col-end-12 rounded-3xl' : 'col-start-2 rounded-3xl')}
                 whileHover={{scale: 1.05}}
                 transition={splashTransition}>
                 <Link to='/projects'>
-                    <img className={'h-[500px] w-max object-cover absolute '
+                    <img className={'h-3/4 w-11/12 object-cover absolute '
                         + (id % 2 !== 0 ?
                             'rounded-l-3xl right-0 top-1/2 transform -translate-y-1/2'
                             : 'rounded-r-3xl left-0 top-1/2 transform -translate-y-1/2')}
