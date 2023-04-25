@@ -4,20 +4,20 @@ import {splashTransition} from "../data/transitionData";
 
 function SingleProject({projectInfo, id}) {
     return (
-        <div className='grid grid-cols-12 gap-10 z-10'>
+        <div className='grid grid-cols-2 gap-10 z-10'>
             {id % 2 !== 0 &&
-                <div className='col-span-4 col-start-3 text-end pr-12'>
+                <div className='text-start pr-12'>
                     <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text mt-24'>
                         {projectInfo.name}
                     </h3>
-                    <p className='font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text'>
+                    <p className='font-nunito text-xl dark:text-dark-theme-text'>
                         {projectInfo.description}
                     </p>
                 </div>
             }
             <motion.div
-                className={'h- sm:h-[600px] relative col-span-5 bg-blue-100 z-0 '
-                    + (id % 2 !== 0 ? 'col-end-12 rounded-3xl' : 'col-start-2 rounded-3xl')}
+                className={'sm:h-[600px] relative bg-blue-100 z-0 '
+                    + (id % 2 !== 0 ? ' rounded-l-3xl' : ' rounded-r-3xl')}
                 whileHover={{scale: 1.05}}
                 transition={splashTransition}>
                 <Link to='/projects'>
@@ -30,11 +30,11 @@ function SingleProject({projectInfo, id}) {
                 </Link>
             </motion.div>
             {id % 2 === 0 &&
-                <div className='col-span-3 col-start-7 text-start pl-12 z-10'>
+                <div className='text-start pl-12 z-10'>
                     <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text mt-24'>
                         {projectInfo.name}
                     </h3>
-                    <p className='font-nunito dark:text-dark-theme-text'>
+                    <p className='font-nunito text-xl dark:text-dark-theme-text'>
                         {projectInfo.description}
                     </p>
                 </div>
