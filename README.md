@@ -5,5 +5,5 @@
   samueljcatania.com
 </h1>
 <p align='center'>
-  My personal portfolio built with <a href='https://react.dev/' target='_blank'>React</a> and <a href='https://tailwindcss.com/' target='_blank'>Tailwind CSS</a> and hosted with GitHub Pages
+  My personal portfolio built with <a href='https://react.dev/' target='_blank'>ReactJS</a> and styled with <a href='https://tailwindcss.com/' target='_blank'>Tailwind CSS</a> using <a href='https://www.framer.com/motion/' target='_blank'>Framer Motion</a> to handle animations. Hosted on GitHub Pages.
 </p>
