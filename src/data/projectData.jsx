@@ -1,6 +1,6 @@
 export const projectData = [
     {
-        name: 'Smart Doorbell',
+        name: 'Smart Doorbell Application',
         description: 'A Smart Doorbell application built for the Raspberry Pi in C++ using OpenCV, GTKmm, and Wt Web ' +
             'Toolkit. Features include networking, motion detection, facial detection, set-and-forget intelligent ' +
             'video and photo capturing, and file reading/writing capabilities.',

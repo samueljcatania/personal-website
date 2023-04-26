@@ -17,7 +17,7 @@ function Footer({darkMode}) {
                         }
                     </a>
                     <a className='hover:opacity-50 dark:hover:opacity-30 p-4 duration-200'
-                       href='https://www.linkedin.com/in/samueljamescatania'
+                       href='https://www.linkedin.com/in/samueljcatania'
                        target='_blank'
                        rel='noopener noreferrer'>
                         {darkMode
