@@ -3,7 +3,8 @@ import {motion} from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
 // Data
 import {splashTransition} from "../data/transitionData";
-
+// Styles
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function SingleProject({projectInfo, id}) {
     const windowSize = useWindowSize()
@@ -49,12 +50,13 @@ function SingleProject({projectInfo, id}) {
                             'translate-x-1/2 lg:translate-x-0'
                             : 'rounded-3xl lg:rounded-r-3xl lg:rounded-l-none left-1/2 lg:left-0 top-1/2 transform -translate-y-1/2 ' +
                             '-translate-x-1/2 lg:translate-x-0')}
-                         src={require('../assets/projects/' + projectInfo.images)}
+                         src={require('../assets/projects/' + projectInfo.image)}
                          alt={projectInfo.name}/>
                 </a>
             </motion.div>
             {(id % 2 === 0 || windowSize[0] < 1024) &&
-                <div className='text-start lg:pl-12 z-10 mx-8 sm:mx-12 md:mx-24 lg:mr-8 min-[1900px]:mr-44 min-[1900px]:mx-8'>
+                <div
+                    className='text-start lg:pl-12 z-10 mx-8 sm:mx-12 md:mx-24 lg:mr-8 min-[1900px]:mr-44 min-[1900px]:mx-8'>
                     <h3 className={'font-bold font-nunito text-3xl md:text-4xl xl:text-5xl mb-1 ' +
                         'dark:text-dark-theme-text ' + projectInfo.margins}>
                         {projectInfo.name}
