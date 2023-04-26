@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import {motion} from "framer-motion";
 import {splashTransition} from "../data/transitionData";
 
@@ -20,14 +19,17 @@ function SingleProject({projectInfo, id}) {
                     + (id % 2 !== 0 ? ' rounded-l-3xl' : ' rounded-r-3xl')}
                 whileHover={{scale: 1.05}}
                 transition={splashTransition}>
-                <Link to='/projects'>
+                <a href={projectInfo.github}
+                   target='_blank'
+                   rel='noopener noreferrer'>
+
                     <img className={'h-3/4 w-11/12 object-cover absolute '
                         + (id % 2 !== 0 ?
                             'rounded-l-3xl right-0 top-1/2 transform -translate-y-1/2'
                             : 'rounded-r-3xl left-0 top-1/2 transform -translate-y-1/2')}
-                         src={require('../assets/splash/splash_3000x1907.webp')}
+                         src={require('../assets/projects/' + projectInfo.images)}
                          alt={projectInfo.name}/>
-                </Link>
+                </a>
             </motion.div>
             {id % 2 === 0 &&
                 <div className='text-start pl-12 z-10'>

@@ -1,16 +1,17 @@
 import {useEffect, useRef, useState} from "react";
 import {motion, useScroll, useTransform} from "framer-motion";
+// Hooks
+import useWindowSize from "../hooks/useWindowSize";
 // Components
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 // Data
 import {firstName, lastName, letter} from "../data/variantData"
 import {homeTransition} from "../data/transitionData"
-import useWindowSize from "../hooks/useWindowSize";
-import Footer from "../components/Footer";
 
 
 function Home() {

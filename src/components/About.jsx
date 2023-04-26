@@ -17,6 +17,14 @@ function About() {
                     problems. When I’m not at my computer I like to spend my time reading, running, and playing board
                     games.
                 </p>
+                <a className='bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded dark:bg-white
+                             dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200 mt-10'
+                   href={require('../assets/resume/Samuel-Catania_Resume.pdf')}
+                   target='_blank'
+                   rel='noopener noreferrer'>
+                    Resume
+                </a>
+
             </div>
         </div>)
 }
