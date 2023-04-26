@@ -1,44 +1,74 @@
 import {motion} from "framer-motion";
+// Hooks
+import useWindowSize from "../hooks/useWindowSize";
+// Data
 import {splashTransition} from "../data/transitionData";
 
+
 function SingleProject({projectInfo, id}) {
+    const windowSize = useWindowSize()
+
     return (
-        <div className='grid grid-cols-2 gap-10 z-10'>
-            {id % 2 !== 0 &&
-                <div className='text-start pr-12'>
-                    <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text mt-24'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-4 z-10'>
+            {id % 2 !== 0 && windowSize[0] >= 1024 &&
+                <div className='text-start md:pr-24 justify-self-end ml-8 md:ml-24 min-[1900px]:ml-44'>
+                    <h3 className={'font-bold font-nunito text-3xl md:text-4xl xl:text-5xl mb-1 ' +
+                        'dark:text-dark-theme-text ' + projectInfo.margins}>
                         {projectInfo.name}
                     </h3>
-                    <p className='font-nunito text-xl dark:text-dark-theme-text'>
+                    <p className='font-nunito text-lg xl:text-xl dark:text-dark-theme-text mb-12'>
                         {projectInfo.description}
                     </p>
+                    <a className='bg-black hover:bg-opacity-75 text-white text-lg font-bold py-4 px-6 rounded dark:bg-white
+                             dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200'
+                       href={projectInfo.github}
+                       target='_blank'
+                       rel='noopener noreferrer'>
+                        GitHub
+                    </a>
                 </div>
             }
             <motion.div
-                className={'sm:h-[600px] relative bg-blue-100 z-0 '
-                    + (id % 2 !== 0 ? ' rounded-l-3xl' : ' rounded-r-3xl')}
-                whileHover={{scale: 1.05}}
+                className={'aspect-[8/6] min-[1024px]:aspect-[8/10] ' +
+                    'min-[1200px]:aspect-[9/10] min-[1400px]:aspect-[10/9] min-[1600px]:aspect-[4/3] ' +
+                    'min-[1800px]:aspect-video relative z-0 bg-[#64574D] dark:bg-[#8c8076] '
+                    + (id % 2 !== 0 ?
+                        'rounded-3xl lg:rounded-l-3xl lg:rounded-r-none mx-8 sm:mx-12 md:mx-24 lg:ml-12 lg:mx-0'
+                        : 'rounded-3xl lg:rounded-r-3xl lg:rounded-l-none mx-8 sm:mx-12 md:mx-24 lg:mr-12 lg:mx-0')}
+                whileHover={{
+                    scale: 1.05,
+                    x: id % 2 !== 0 ? -(windowSize[0] * 0.01) : (windowSize[0] * 0.01)
+                }}
                 transition={splashTransition}>
                 <a href={projectInfo.github}
                    target='_blank'
                    rel='noopener noreferrer'>
-
-                    <img className={'h-3/4 w-11/12 object-cover absolute '
+                    <img className={'h-5/6 xl:h-3/4 w-11/12 object-cover absolute '
                         + (id % 2 !== 0 ?
-                            'rounded-l-3xl right-0 top-1/2 transform -translate-y-1/2'
-                            : 'rounded-r-3xl left-0 top-1/2 transform -translate-y-1/2')}
+                            'rounded-3xl lg:rounded-l-3xl lg:rounded-r-none right-1/2 lg:right-0 top-1/2 transform -translate-y-1/2 ' +
+                            'translate-x-1/2 lg:translate-x-0'
+                            : 'rounded-3xl lg:rounded-r-3xl lg:rounded-l-none left-1/2 lg:left-0 top-1/2 transform -translate-y-1/2 ' +
+                            '-translate-x-1/2 lg:translate-x-0')}
                          src={require('../assets/projects/' + projectInfo.images)}
                          alt={projectInfo.name}/>
                 </a>
             </motion.div>
-            {id % 2 === 0 &&
-                <div className='text-start pl-12 z-10'>
-                    <h3 className='font-bold font-nunito text-4xl md:text-5xl mb-1 dark:text-dark-theme-text mt-24'>
+            {(id % 2 === 0 || windowSize[0] < 1024) &&
+                <div className='text-start lg:pl-12 z-10 mx-8 sm:mx-12 md:mx-24 lg:mr-8 min-[1900px]:mr-44 min-[1900px]:mx-8'>
+                    <h3 className={'font-bold font-nunito text-3xl md:text-4xl xl:text-5xl mb-1 ' +
+                        'dark:text-dark-theme-text ' + projectInfo.margins}>
                         {projectInfo.name}
                     </h3>
-                    <p className='font-nunito text-xl dark:text-dark-theme-text'>
+                    <p className='font-nunito text-lg xl:text-xl dark:text-dark-theme-text mb-12'>
                         {projectInfo.description}
                     </p>
+                    <a className='bg-black hover:bg-opacity-75 text-white text-lg font-bold py-4 px-6 rounded dark:bg-white
+                             dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200'
+                       href={projectInfo.github}
+                       target='_blank'
+                       rel='noopener noreferrer'>
+                        GitHub
+                    </a>
                 </div>
             }
         </div>
