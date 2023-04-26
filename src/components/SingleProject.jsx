@@ -3,8 +3,6 @@ import {motion} from "framer-motion";
 import useWindowSize from "../hooks/useWindowSize";
 // Data
 import {splashTransition} from "../data/transitionData";
-// Styles
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function SingleProject({projectInfo, id}) {
     const windowSize = useWindowSize()
