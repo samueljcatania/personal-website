@@ -1,12 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.199c6ec8.css",
-    "main.js": "/static/js/main.e79887a7.js",
+    "main.js": "/static/js/main.07b65733.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/splash_3000x1907.webp": "/static/media/splash_3000x1907.3923d0ce449dc00f3f06.webp",
     "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.942c68fb765eefed77b8.png",
     "static/media/k-means-clustering.png": "/static/media/k-means-clustering.5555028eb4f82cd57807.png",
-    "static/media/Samuel-Catania_Resume.pdf": "/static/media/Samuel-Catania_Resume.496deefdc33622ccb904.pdf",
     "static/media/test-accuracy.png": "/static/media/test-accuracy.46feb15160ae04d50965.png",
     "static/media/data.png": "/static/media/data.3a93525eb470da5433bc.png",
     "static/media/splash_800x509.jpg": "/static/media/splash_800x509.f29752ba2abd91ace5d0.jpg",
@@ -36,13 +35,14 @@
     "static/media/Tailwind_512.png": "/static/media/Tailwind_512.2932a9f186e9ebcd54f1.png",
     "static/media/JavaScript_512.png": "/static/media/JavaScript_512.3dfb665e058d08c99f28.png",
     "static/media/Tailwind_512_DarkMode.png": "/static/media/Tailwind_512_DarkMode.cae91a13280a41bad3c4.png",
+    "static/media/Samuel-Catania_Resume.pdf": "/static/media/Samuel-Catania_Resume.fbe3f018e24ab547f795.pdf",
     "index.html": "/index.html",
     "main.199c6ec8.css.map": "/static/css/main.199c6ec8.css.map",
-    "main.e79887a7.js.map": "/static/js/main.e79887a7.js.map",
+    "main.07b65733.js.map": "/static/js/main.07b65733.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.199c6ec8.css",
-    "static/js/main.e79887a7.js"
+    "static/js/main.07b65733.js"
   ]
 }
