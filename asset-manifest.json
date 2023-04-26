@@ -1,18 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.199c6ec8.css",
-    "main.js": "/static/js/main.07b65733.js",
+    "main.css": "/static/css/main.f4cae5dd.css",
+    "main.js": "/static/js/main.69e4dd37.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.9595727fd4a9c5f236a1.png",
     "static/media/splash_3000x1907.webp": "/static/media/splash_3000x1907.3923d0ce449dc00f3f06.webp",
-    "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.942c68fb765eefed77b8.png",
-    "static/media/k-means-clustering.png": "/static/media/k-means-clustering.5555028eb4f82cd57807.png",
-    "static/media/test-accuracy.png": "/static/media/test-accuracy.46feb15160ae04d50965.png",
-    "static/media/data.png": "/static/media/data.3a93525eb470da5433bc.png",
+    "static/media/machine-learning.png": "/static/media/machine-learning.31f69400388e2e12533a.png",
     "static/media/splash_800x509.jpg": "/static/media/splash_800x509.f29752ba2abd91ace5d0.jpg",
     "static/media/React_512.png": "/static/media/React_512.222b46ec12ee705ead71.png",
-    "static/media/noisy-data.png": "/static/media/noisy-data.7eea1c96cc1029928d08.png",
     "static/media/splash_550x350.jpg": "/static/media/splash_550x350.21629bd2de21859bb6e0.jpg",
-    "static/media/agglomerative-clustering.png": "/static/media/agglomerative-clustering.725cb3cf3e079978c6a2.png",
     "static/media/MySQL_512.png": "/static/media/MySQL_512.5f8a211c010a92959207.png",
     "static/media/Linux_512.png": "/static/media/Linux_512.3db32b955e9b61f35998.png",
     "static/media/NodeJS_512.png": "/static/media/NodeJS_512.8635b25e47ae836d4acf.png",
@@ -37,12 +33,12 @@
     "static/media/Tailwind_512_DarkMode.png": "/static/media/Tailwind_512_DarkMode.cae91a13280a41bad3c4.png",
     "static/media/Samuel-Catania_Resume.pdf": "/static/media/Samuel-Catania_Resume.fbe3f018e24ab547f795.pdf",
     "index.html": "/index.html",
-    "main.199c6ec8.css.map": "/static/css/main.199c6ec8.css.map",
-    "main.07b65733.js.map": "/static/js/main.07b65733.js.map",
+    "main.f4cae5dd.css.map": "/static/css/main.f4cae5dd.css.map",
+    "main.69e4dd37.js.map": "/static/js/main.69e4dd37.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.199c6ec8.css",
-    "static/js/main.07b65733.js"
+    "static/css/main.f4cae5dd.css",
+    "static/js/main.69e4dd37.js"
   ]
 }
