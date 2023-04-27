@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.f4cae5dd.css",
-    "main.js": "/static/js/main.212bec8d.js",
+    "main.js": "/static/js/main.a672e2df.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.9595727fd4a9c5f236a1.png",
     "static/media/splash_3000x1907.webp": "/static/media/splash_3000x1907.3923d0ce449dc00f3f06.webp",
+    "static/media/smart-doorbell.png": "/static/media/smart-doorbell.52a0d3593b7f3612314b.png",
     "static/media/machine-learning.png": "/static/media/machine-learning.31f69400388e2e12533a.png",
     "static/media/splash_800x509.jpg": "/static/media/splash_800x509.f29752ba2abd91ace5d0.jpg",
     "static/media/React_512.png": "/static/media/React_512.222b46ec12ee705ead71.png",
@@ -15,7 +16,6 @@
     "static/media/Python_512.png": "/static/media/Python_512.6a5cbc319ab3ddf8ef92.png",
     "static/media/C_512.png": "/static/media/C_512.cdcf3439b857aa9604b4.png",
     "static/media/MongoDB_512.png": "/static/media/MongoDB_512.7e5b739c354145fa00c5.png",
-    "static/media/dendrogram.png": "/static/media/dendrogram.330fe385d9d7de182f01.png",
     "static/media/Samuel-Catania_Resume.pdf": "/static/media/Samuel-Catania_Resume.06bcf8314a69e7b0944f.pdf",
     "static/media/Java_512.png": "/static/media/Java_512.ddf8676bd569fe01ab44.png",
     "static/media/GitHub_512_DarkMode.png": "/static/media/GitHub_512_DarkMode.0363affaf2be9aa0ac65.png",
@@ -34,11 +34,11 @@
     "static/media/Tailwind_512_DarkMode.png": "/static/media/Tailwind_512_DarkMode.cae91a13280a41bad3c4.png",
     "index.html": "/index.html",
     "main.f4cae5dd.css.map": "/static/css/main.f4cae5dd.css.map",
-    "main.212bec8d.js.map": "/static/js/main.212bec8d.js.map",
+    "main.a672e2df.js.map": "/static/js/main.a672e2df.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f4cae5dd.css",
-    "static/js/main.212bec8d.js"
+    "static/js/main.a672e2df.js"
   ]
 }
