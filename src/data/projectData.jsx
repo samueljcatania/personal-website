@@ -5,7 +5,7 @@ export const projectData = [
             'Toolkit. Features include networking, motion detection, facial detection, set-and-forget intelligent ' +
             'video and photo capturing, and file reading/writing capabilities.',
         github: 'https://github.com/samueljcatania/smart-doorbell',
-        image: 'smart-doorbell/dendrogram.png',
+        image: 'smart-doorbell/smart-doorbell.png',
         margins: 'mt-8 lg:mt-24'
     },
     {
