@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.f4cae5dd.css",
-    "main.js": "/static/js/main.a672e2df.js",
+    "main.css": "/static/css/main.f317223f.css",
+    "main.js": "/static/js/main.12b7ff5c.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "static/media/machine-learning.png": "/static/media/machine-learning.cf4caf21ab05c54f7304.png",
     "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.9595727fd4a9c5f236a1.png",
     "static/media/splash_3000x1907.webp": "/static/media/splash_3000x1907.3923d0ce449dc00f3f06.webp",
     "static/media/smart-doorbell.png": "/static/media/smart-doorbell.52a0d3593b7f3612314b.png",
-    "static/media/machine-learning.png": "/static/media/machine-learning.31f69400388e2e12533a.png",
     "static/media/splash_800x509.jpg": "/static/media/splash_800x509.f29752ba2abd91ace5d0.jpg",
     "static/media/React_512.png": "/static/media/React_512.222b46ec12ee705ead71.png",
     "static/media/splash_550x350.jpg": "/static/media/splash_550x350.21629bd2de21859bb6e0.jpg",
@@ -33,12 +33,12 @@
     "static/media/JavaScript_512.png": "/static/media/JavaScript_512.3dfb665e058d08c99f28.png",
     "static/media/Tailwind_512_DarkMode.png": "/static/media/Tailwind_512_DarkMode.cae91a13280a41bad3c4.png",
     "index.html": "/index.html",
-    "main.f4cae5dd.css.map": "/static/css/main.f4cae5dd.css.map",
-    "main.a672e2df.js.map": "/static/js/main.a672e2df.js.map",
+    "main.f317223f.css.map": "/static/css/main.f317223f.css.map",
+    "main.12b7ff5c.js.map": "/static/js/main.12b7ff5c.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4cae5dd.css",
-    "static/js/main.a672e2df.js"
+    "static/css/main.f317223f.css",
+    "static/js/main.12b7ff5c.js"
   ]
 }
