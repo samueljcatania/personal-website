@@ -30,7 +30,7 @@ function SingleProject({projectInfo, id}) {
             <motion.div
                 className={'aspect-[8/6] min-[1024px]:aspect-[8/10] ' +
                     'min-[1200px]:aspect-[9/10] min-[1400px]:aspect-[10/9] min-[1600px]:aspect-[4/3] ' +
-                    'min-[1800px]:aspect-video relative z-0 bg-[#64574D] dark:bg-[#8c8076] '
+                    'min-[2100px]:aspect-video relative z-0 bg-[#64574D] dark:bg-[#8c8076] '
                     + (id % 2 !== 0 ?
                         'rounded-3xl lg:rounded-l-3xl lg:rounded-r-none mx-8 sm:mx-12 md:mx-24 lg:ml-12 lg:mx-0'
                         : 'rounded-3xl lg:rounded-r-3xl lg:rounded-l-none mx-8 sm:mx-12 md:mx-24 lg:mr-12 lg:mx-0')}

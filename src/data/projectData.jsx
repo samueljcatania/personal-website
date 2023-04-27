@@ -23,7 +23,7 @@ export const projectData = [
             'Agglomerative Clustering machine learning algorithms implemented with the help of scikit-learn. The ' +
             'Agglomerative Clustering algorithm\'s functionality was also extended so Dendrograms could be created.',
         github: 'https://github.com/samueljcatania/machine-learning',
-        image: 'machine-learning/machine-learning.png',
+        image: 'machine-learning/machine-learning2.png',
         margins: 'mt-8 min-[2100px]:mt-12'
     }]
 
