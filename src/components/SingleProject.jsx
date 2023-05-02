@@ -1,4 +1,5 @@
-import {motion} from "framer-motion";
+import {useRef} from "react";
+import {motion, useInView} from "framer-motion";
 // Hooks
 import useWindowSize from "../hooks/useWindowSize";
 // Data
@@ -6,9 +7,19 @@ import {splashTransition} from "../data/transitionData";
 
 function SingleProject({projectInfo, id}) {
     const windowSize = useWindowSize()
+    const ref = useRef(null);
+    const isInView = useInView(ref, {
+        once: true, margin: '0px 300px -15% 300px'
+    })
 
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-4 z-10'>
+        <motion.div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-4 z-10'
+                    ref={ref}
+                    style={{
+                        transform: isInView ? 'none' : (id % 2 === 0 ? (windowSize[0] < 1280 ? 'translateX(-15%)' : 'translateX(-300px)') : (windowSize[0] < 1280 ? 'translateX(15%)' : 'translateX(300px)')),
+                        opacity: isInView ? 1 : 0,
+                        transition: 'all 1s cubic-bezier(0.17, 0.55, 0.55, 1)'
+                    }}>
             {id % 2 !== 0 && windowSize[0] >= 1024 &&
                 <div className='text-start md:pr-24 justify-self-end ml-8 md:ml-24 min-[1900px]:ml-44'>
                     <h3 className={'font-bold font-nunito text-3xl md:text-4xl xl:text-5xl mb-1 ' +
@@ -71,7 +82,7 @@ function SingleProject({projectInfo, id}) {
                     </a>
                 </div>
             }
-        </div>
+        </motion.div>
     )
 }
 

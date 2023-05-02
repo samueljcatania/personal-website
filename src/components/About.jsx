@@ -14,8 +14,8 @@ function About() {
                     frameworks and libraries to enhance my skills. The field of machine learning also fascinates me with
                     its unique blend of creativity, logic, and technology, inspiring me to explore its various
                     applications with supervised, unsupervised, and deep learning algorithms to tackle real-world
-                    problems. When I’m not at my computer I like to spend my time reading, running, and playing board
-                    games.
+                    problems. When I’m not at my computer I like to spend my time swimming, sailing, running, and
+                    playing hockey.
                 </p>
                 <a className='bg-black hover:bg-opacity-75 text-white font-bold py-2 px-4 rounded dark:bg-white
                              dark:text-black dark:hover:bg-opacity-75 duration-200 dark:duration-200 mt-10'
