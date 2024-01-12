@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f317223f.css",
-    "main.js": "/static/js/main.39601ce0.js",
-    "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "main.css": "/static/css/main.49be1b68.css",
+    "main.js": "/static/js/main.504b5659.js",
+    "static/js/787.0f15b36d.chunk.js": "/static/js/787.0f15b36d.chunk.js",
     "static/media/machine-learning.png": "/static/media/machine-learning.cf4caf21ab05c54f7304.png",
     "static/media/personal-website_theme-split.png": "/static/media/personal-website_theme-split.9595727fd4a9c5f236a1.png",
     "static/media/splash_3000x1907.webp": "/static/media/splash_3000x1907.3923d0ce449dc00f3f06.webp",
     "static/media/smart-doorbell.png": "/static/media/smart-doorbell.52a0d3593b7f3612314b.png",
     "static/media/splash_800x509.jpg": "/static/media/splash_800x509.f29752ba2abd91ace5d0.jpg",
     "static/media/React_512.png": "/static/media/React_512.222b46ec12ee705ead71.png",
+    "static/media/Samuel-Catania.pdf": "/static/media/Samuel-Catania.5c9a4d125904d9ae1b17.pdf",
     "static/media/splash_550x350.jpg": "/static/media/splash_550x350.21629bd2de21859bb6e0.jpg",
     "static/media/MySQL_512.png": "/static/media/MySQL_512.5f8a211c010a92959207.png",
     "static/media/Linux_512.png": "/static/media/Linux_512.3db32b955e9b61f35998.png",
@@ -16,7 +17,6 @@
     "static/media/Python_512.png": "/static/media/Python_512.6a5cbc319ab3ddf8ef92.png",
     "static/media/C_512.png": "/static/media/C_512.cdcf3439b857aa9604b4.png",
     "static/media/MongoDB_512.png": "/static/media/MongoDB_512.7e5b739c354145fa00c5.png",
-    "static/media/Samuel-Catania_Resume.pdf": "/static/media/Samuel-Catania_Resume.06bcf8314a69e7b0944f.pdf",
     "static/media/Java_512.png": "/static/media/Java_512.ddf8676bd569fe01ab44.png",
     "static/media/GitHub_512_DarkMode.png": "/static/media/GitHub_512_DarkMode.0363affaf2be9aa0ac65.png",
     "static/media/C++_512.png": "/static/media/C++_512.24a8f93854ab092f17a7.png",
@@ -33,12 +33,12 @@
     "static/media/JavaScript_512.png": "/static/media/JavaScript_512.3dfb665e058d08c99f28.png",
     "static/media/Tailwind_512_DarkMode.png": "/static/media/Tailwind_512_DarkMode.cae91a13280a41bad3c4.png",
     "index.html": "/index.html",
-    "main.f317223f.css.map": "/static/css/main.f317223f.css.map",
-    "main.39601ce0.js.map": "/static/js/main.39601ce0.js.map",
-    "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
+    "main.49be1b68.css.map": "/static/css/main.49be1b68.css.map",
+    "main.504b5659.js.map": "/static/js/main.504b5659.js.map",
+    "787.0f15b36d.chunk.js.map": "/static/js/787.0f15b36d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f317223f.css",
-    "static/js/main.39601ce0.js"
+    "static/css/main.49be1b68.css",
+    "static/js/main.504b5659.js"
   ]
 }
